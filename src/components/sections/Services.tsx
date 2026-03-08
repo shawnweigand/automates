@@ -59,7 +59,7 @@ export function Services() {
                 >
                     {SERVICES.map((service, index) => (
                         <motion.div key={index} variants={item}>
-                            <Card className="h-full bg-background border-border/50 hover:border-primary/50 transition-colors group">
+                            <Card className="h-full bg-card shadow-lg hover:shadow-xl border-border/50 hover:border-primary/50 transition-all group">
                                 <CardHeader>
                                     <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                                         <service.icon className="h-6 w-6 text-primary" />

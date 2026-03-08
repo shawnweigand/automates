@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, BarChart3, Clock, TrendingUp } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const CASE_STUDIES = [
     {
@@ -35,15 +36,19 @@ export function CaseStudies() {
     return (
         <section id="case-studies" className="py-24 bg-background border-t border-border/40 overflow-hidden">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-                <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
-                    <div className="max-w-2xl">
-                        <h2 className="font-heading text-3xl font-bold sm:text-4xl text-foreground mb-4">
-                            Real <span className="text-primary">Results</span>
-                        </h2>
-                        <p className="text-muted-foreground text-lg">
-                            We believe in metrics, not buzzwords. Here is how our transformations have impacted the bottom line for SMBs.
-                        </p>
-                    </div>
+                <div className="text-center max-w-3xl mx-auto mb-16">
+                    <h2 className="font-heading text-3xl font-bold sm:text-4xl text-foreground mb-4">
+                        Real <span className="text-primary">Results</span>
+                    </h2>
+                    <p className="text-muted-foreground text-lg mb-8">
+                        We believe in metrics, not buzzwords. Here is how our transformations have impacted the bottom line for SMBs.
+                    </p>
+                    <Link href="/case-studies">
+                        <Button variant="outline" size="lg" className="group">
+                            See All Case Studies
+                            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                        </Button>
+                    </Link>
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -54,7 +59,7 @@ export function CaseStudies() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true, margin: "-50px" }}
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                                className="group relative flex flex-col justify-between p-8 rounded-2xl bg-card border border-border hover:border-primary/40 transition-all overflow-hidden h-full cursor-pointer"
+                                className="group relative flex flex-col justify-between p-8 rounded-2xl bg-card shadow-lg hover:shadow-xl border border-border hover:border-primary/40 transition-all overflow-hidden h-full cursor-pointer"
                             >
                                 {/* Glow effect on hover */}
                                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>

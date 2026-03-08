@@ -37,10 +37,14 @@ export function Faq() {
                     </p>
                 </div>
 
-                <Accordion className="w-full">
+                <Accordion className="w-full mt-8 flex flex-col gap-4">
                     {FAQS.map((faq, index) => (
-                        <AccordionItem key={index} value={`item-${index}`} className="border-border">
-                            <AccordionTrigger className="text-left font-medium text-lg text-foreground hover:text-primary transition-colors">
+                        <AccordionItem
+                            key={index}
+                            value={`item-${index}`}
+                            className="bg-card shadow-lg hover:shadow-xl border border-border hover:border-primary/40 rounded-2xl px-6 transition-all overflow-hidden"
+                        >
+                            <AccordionTrigger className="text-left font-medium text-lg text-foreground hover:text-primary transition-colors hover:no-underline">
                                 {faq.question}
                             </AccordionTrigger>
                             <AccordionContent className="text-muted-foreground text-base leading-relaxed pb-6">
