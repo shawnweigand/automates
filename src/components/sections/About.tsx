@@ -65,7 +65,7 @@ export function About() {
     };
 
     return (
-        <section id="about" className="py-24 bg-background border-t border-border/40 relative">
+        <section id="about" className="py-24 bg-slate-50 border-t border-border/40 relative">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
