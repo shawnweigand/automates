@@ -49,7 +49,7 @@ export function Footer() {
                             className="h-8 w-8 object-contain"
                         />
                         <span className="font-heading text-xl font-bold tracking-tight text-foreground">
-                            AutoMates<span className="text-primary">.</span>
+                            AutoMates<span className="text-primary"></span>
                         </span>
                     </Link>
 
