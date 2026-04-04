@@ -6,35 +6,23 @@ import { Quote } from "lucide-react";
 
 const TESTIMONIALS = [
     {
-        quote: "AutoMates didn't just sell us a script; they re-engineered how our data flows between sales and fulfillment. Absolute game-changer for our margins.",
-        name: "Sarah Jenkins",
-        role: "COO, Nexus Freight",
+        quote: "It would not have been possible to build a Global Technology Center of Excellence as rapidly as we did without the hiring automation [AutoMates] created to fit our needs.",
+        name: "Tami Ushiroda",
+        role: "Global Technology Center Site Lead, The Estée Lauder Companies Inc.",
+        image: "/testimonials/tami.jpg",
     },
     {
-        quote: "Our biggest bottleneck was lead triage. Now, AI handles classification and scoring instantly. 30% increase in qualified meetings within month one.",
-        name: "Marcus Thorne",
-        role: "VP of RevOps, Nexus Financial",
+        quote: "I had a great experience working with [AutoMates]... [AutoMates] really understood what I needed and delivered exactly as discussed... knowledge and technical skills in automation are top level... everything was done efficiently, properly structured, and worked perfectly.",
+        name: "Ibrahim Mikaeel",
+        role: "Director, FlowSec AI",
+        image: "/testimonials/ibrahim.jpg",
     },
-    {
-        quote: "What impressed me most was the ongoing management. When OpenAI shipped an update that broke our old parser, they had it fixed before we even noticed.",
-        name: "Emily Chen",
-        role: "Founder, Acme Logistics",
-    },
-    {
-        quote: "The strategic audit alone was worth the engagement. They identified three massive inefficiencies we'd become blind to, and the custom bot they built paid for itself in six weeks.",
-        name: "David Kim",
-        role: "CEO, Elevate E-Commerce",
-    },
-    {
-        quote: "We thought AI was just for tech companies until AutoMates showed us how to automate our archaic inventory management. It feels like magic, but it's just great engineering.",
-        name: "Rachel Alarie",
-        role: "Operations Director, RetailNow",
-    },
-    {
-        quote: "I was skeptical about their 'training' promise, but they actually got my front-line staff excited to use the new automated workflows. That's never happened before.",
-        name: "Michael Peterson",
-        role: "Founder, Apex Services",
-    }
+    // {
+    //     quote: "What impressed me most was the ongoing management. When OpenAI shipped an update that broke our old parser, they had it fixed before we even noticed.",
+    //     name: "Emily Chen",
+    //     role: "Founder, Acme Logistics",
+    //     // image: "/images/emily.jpg"
+    // }
 ];
 
 export function Testimonials() {
@@ -64,9 +52,7 @@ export function Testimonials() {
     });
 
     return (
-        <section id="testimonials" className="py-24 bg-card/30 border-t border-border/40 relative overflow-hidden">
-            {/* Abstract Background Element */}
-            <div className="absolute -top-40 -right-40 w-[600px] h-[600px] bg-primary/10 blur-[100px] rounded-full pointer-events-none mix-blend-screen"></div>
+        <section id="testimonials" className="py-24 bg-slate-50 border-t border-border/40 relative overflow-hidden">
 
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10 mb-16">
                 <div className="text-center max-w-2xl mx-auto">
@@ -85,16 +71,16 @@ export function Testimonials() {
                 onMouseLeave={() => (speed.current = 1)}
             >
                 {/* Fade edges */}
-                <div className="absolute left-0 top-0 bottom-0 w-24 md:w-48 bg-gradient-to-r from-background to-transparent z-20 pointer-events-none"></div>
-                <div className="absolute right-0 top-0 bottom-0 w-24 md:w-48 bg-gradient-to-l from-background to-transparent z-20 pointer-events-none"></div>
+                <div className="absolute left-0 top-0 bottom-0 w-24 md:w-48 bg-gradient-to-r from-slate-50 to-transparent z-20 pointer-events-none"></div>
+                <div className="absolute right-0 top-0 bottom-0 w-24 md:w-48 bg-gradient-to-l from-slate-50 to-transparent z-20 pointer-events-none"></div>
 
                 <motion.div
                     ref={scrollerRef}
                     style={{ x }}
                     className="flex gap-8 w-max px-4"
                 >
-                    {/* Render two identical sets to allow seamless wrapping */}
-                    {[0, 1].map((setIndex) => (
+                    {/* Render multiple identical sets to allow seamless wrapping across wide screens */}
+                    {[0, 1, 2, 3].map((setIndex) => (
                         <div key={`set-${setIndex}`} className="flex gap-8">
                             {TESTIMONIALS.map((testimonial, index) => (
                                 <div
@@ -107,9 +93,17 @@ export function Testimonials() {
                                     </p>
 
                                     <div className="flex items-center gap-4">
-                                        <div className="h-12 w-12 rounded-full bg-primary/20 flex items-center justify-center font-bold font-heading text-primary border border-primary/30 shrink-0">
-                                            {testimonial.name.charAt(0)}
-                                        </div>
+                                        {testimonial.image ? (
+                                            <img
+                                                src={testimonial.image}
+                                                alt={testimonial.name}
+                                                className="h-12 w-12 rounded-full object-cover shrink-0 border border-border"
+                                            />
+                                        ) : (
+                                            <div className="h-12 w-12 rounded-full bg-primary/20 flex items-center justify-center font-bold font-heading text-primary border border-primary/30 shrink-0">
+                                                {testimonial.name.charAt(0)}
+                                            </div>
+                                        )}
                                         <div>
                                             <h4 className="font-semibold text-foreground">{testimonial.name}</h4>
                                             <p className="text-sm text-muted-foreground">{testimonial.role}</p>

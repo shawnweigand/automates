@@ -4,6 +4,8 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { InlineWidget } from "react-calendly";
 
+import Image from "next/image";
+
 export function Footer() {
     return (
         <footer id="contact" className="bg-background border-t border-border/40 py-20 relative overflow-hidden">
@@ -17,7 +19,7 @@ export function Footer() {
                     Ready to scale <span className="text-primary">intelligently?</span>
                 </h2>
                 <p className="text-muted-foreground text-lg sm:text-xl mb-12 max-w-2xl text-balance">
-                    Book a free 45-minute discovery call with our team. We'll identify at least one immediate AI-driven efficiency for your business on the call.
+                    Book a free 45-minute discovery call with our team. We'll identify at least one immediate efficiency for your business on the call.
                 </p>
 
                 {/* 
@@ -39,6 +41,13 @@ export function Footer() {
 
                 <div className="w-full flex flex-col md:flex-row justify-between items-center pt-8 border-t border-border/40 gap-6">
                     <Link href="/" className="flex items-center space-x-2">
+                        <Image
+                            src="/logo.png"
+                            alt="AutoMates Logo"
+                            width={32}
+                            height={32}
+                            className="h-8 w-8 object-contain"
+                        />
                         <span className="font-heading text-xl font-bold tracking-tight text-foreground">
                             AutoMates<span className="text-primary">.</span>
                         </span>
