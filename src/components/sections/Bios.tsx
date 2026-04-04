@@ -24,7 +24,7 @@ const TEAM = [
     {
         name: "Shawn Weigand",
         role: "Co-Founder",
-        bio: "With a background in engineering and cloud infrastructure, Shawn brings a builder's mindset to every engagement. His foundation was built on writing Javascript and Python scripts to automate IT tasks, and has evolved into designing end-to-end systems using tools like n8n and Claude to unlock measurable ROI for operations-heavy teams. \n\nToday, he's all-in on AI - integrating Claude, Gemini, and OpenAI into business workflows. When he's not building for clients, Shawn shares AI and automation strategies on YouTube and LinkedIn for teams ready to work smarter.",
+        bio: "With a background in engineering and cloud infrastructure for Fortune 500 companies, Shawn brings a builder's mindset to every engagement. His foundation was built on writing Javascript and Python scripts to automate IT tasks, and has evolved into designing end-to-end systems using tools like n8n and Claude to unlock measurable ROI for operations-heavy teams. \n\nToday, he's all-in on AI - integrating Claude, Gemini, and OpenAI into business workflows. When he's not building for clients, Shawn shares AI and automation strategies on YouTube and LinkedIn for teams ready to work smarter.",
         image: "/bios/shawn.PNG",
         linkedin: "https://www.linkedin.com/in/shawn-weigand/",
         youtube: "https://www.youtube.com/@shawnbuildsai",
@@ -36,7 +36,7 @@ const TEAM = [
     {
         name: "John Unser",
         role: "Co-Founder",
-        bio: "Place a short biography here. Discuss their technical leadership, past projects, and deep knowledge of AI implementation.",
+        bio: "On paper, John's experience is centered around building high-performing revenue teams at VC-backed SaaS companies. But between the lines, he's an automation expert who is energized by building with AI.\n\nWhile scaling revenue teams, John found that the largest efficiency gains often came from optimizing his team's backend processes. So he spent much of his time building AI-based systems that made his teams exponentially more efficient. He's built inbound lead scoring systems, cold email infrastructure, automated CRM enrichment, and complex SOPs. He uses tools like n8n, Clay, and Claude Code to wire it all together, and he's well-versed across a wide range of softwares and tools.",
         image: "/bios/jc.JPG",
         linkedin: "https://www.linkedin.com/in/john-charles-unser/",
         scale: 2.5,

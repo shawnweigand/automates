@@ -18,7 +18,7 @@ export default function Home() {
         <TrustedBy />
         <About />
         <HowWeHelp />
-        <CaseStudies />
+        {/* <CaseStudies /> */}
         <Testimonials />
         <Bios />
         <Faq />
