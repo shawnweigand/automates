@@ -3,6 +3,9 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, Wrench, Handshake } from "lucide-react";
+import { PriorityListCard } from "@/components/ui/PriorityListCard";
+import { ImplementationCard } from "@/components/ui/ImplementationCard";
+import { PartnershipCard } from "@/components/ui/PartnershipCard";
 
 const DIFFERENTIATORS = [
     {
@@ -11,7 +14,7 @@ const DIFFERENTIATORS = [
         icon: Search,
     },
     {
-        title: "Hands-on Implementation",
+        title: "End-to-End Implementation",
         description: "We don't just hand you a blueprint. We roll up our sleeves to build, test, and deploy the actual automation systems into your existing stack.",
         icon: Wrench,
     },
@@ -28,21 +31,65 @@ const DIFFERENTIATORS = [
 export function About() {
     const [activeIndex, setActiveIndex] = useState(0);
 
-    const renderEmptyCard = () => (
-        <motion.div
-            key={activeIndex}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.3 }}
-            className="w-full h-full rounded-2xl bg-card shadow-lg border border-border"
-        />
-    );
+    const renderCard = () => {
+        if (activeIndex === 0) {
+            return (
+                <motion.div
+                    key="discovery"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.3 }}
+                    className="w-full h-full flex items-center justify-center"
+                >
+                    <PriorityListCard />
+                </motion.div>
+            );
+        }
+        if (activeIndex === 1) {
+            return (
+                <motion.div
+                    key="implementation"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.3 }}
+                    className="w-full h-full flex items-center justify-center"
+                >
+                    <ImplementationCard />
+                </motion.div>
+            );
+        }
+        if (activeIndex === 2) {
+            return (
+                <motion.div
+                    key="partnership"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.3 }}
+                    className="w-full h-full flex items-center justify-center"
+                >
+                    <PartnershipCard />
+                </motion.div>
+            );
+        }
+        return (
+            <motion.div
+                key={activeIndex}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.3 }}
+                className="w-full h-full rounded-2xl bg-card shadow-lg border border-border"
+            />
+        );
+    };
 
     return (
         <section id="about" className="py-24 bg-background border-t border-border/40 relative">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-                <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-16">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
 
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
@@ -87,11 +134,11 @@ export function About() {
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true, margin: "-100px" }}
                         transition={{ duration: 0.8 }}
-                        className="relative w-full h-full min-h-[300px] lg:min-h-[400px] flex items-center justify-center p-4 lg:p-8"
+                        className="relative w-full h-full min-h-[300px] lg:min-h-[400px] flex items-center justify-center p-2 lg:p-4"
                     >
                         <AnimatePresence mode="wait">
-                            <div className="w-full h-full max-w-sm lg:max-w-md aspect-[4/3] lg:aspect-square">
-                                {renderEmptyCard()}
+                            <div className="w-full h-full">
+                                {renderCard()}
                             </div>
                         </AnimatePresence>
                     </motion.div>
