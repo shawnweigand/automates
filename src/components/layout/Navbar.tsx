@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 import {
     Sheet,
     SheetContent,
@@ -31,8 +32,15 @@ export function Navbar() {
 
                 {/* Logo */}
                 <Link href="/" className="flex items-center space-x-2">
+                    <Image
+                        src="/logo.png"
+                        alt="AutoMates Robot Logo"
+                        width={40}
+                        height={40}
+                        className="h-10 w-10 object-contain"
+                    />
                     <span className="font-heading text-xl font-bold tracking-tight text-foreground">
-                        AutoMates<span className="text-primary">.</span>
+                        AutoMates<span className="text-primary"></span>
                     </span>
                 </Link>
 
@@ -61,7 +69,14 @@ export function Navbar() {
                         </SheetTrigger>
                         <SheetContent side="right" className="w-[300px] sm:w-[400px]">
                             <SheetHeader>
-                                <SheetTitle className="text-left font-heading font-bold text-xl">
+                                <SheetTitle className="text-left font-heading font-bold text-xl flex items-center gap-2">
+                                    <Image
+                                        src="/logo.png"
+                                        alt="AutoMates"
+                                        width={32}
+                                        height={32}
+                                        className="h-8 w-8 object-contain"
+                                    />
                                     AutoMates<span className="text-primary">.</span>
                                 </SheetTitle>
                             </SheetHeader>

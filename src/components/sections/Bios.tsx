@@ -24,7 +24,7 @@ const TEAM = [
     {
         name: "Shawn Weigand",
         role: "Co-Founder",
-        bio: "Place a short biography here. Discuss your background, your expertise, and how you help businesses transform with AI and automation.",
+        bio: "With a background in engineering and cloud infrastructure, Shawn brings a builder's mindset to every engagement. His foundation was built on writing Javascript and Python scripts to automate IT tasks, and has evolved into designing end-to-end systems using tools like n8n and Claude to unlock measurable ROI for operations-heavy teams. \n\nToday, he's all-in on AI - integrating Claude, Gemini, and OpenAI into business workflows. When he's not building for clients, Shawn shares AI and automation strategies on YouTube and LinkedIn for teams ready to work smarter.",
         image: "/bios/shawn.PNG",
         linkedin: "https://www.linkedin.com/in/shawn-weigand/",
         youtube: "https://www.youtube.com/@shawnbuildsai",
@@ -59,7 +59,7 @@ export function Bios() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mx-auto">
                     {TEAM.map((person, index) => (
                         <motion.div
                             key={index}
@@ -67,45 +67,50 @@ export function Bios() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-50px" }}
                             transition={{ duration: 0.5, delay: index * 0.2 }}
-                            className="flex flex-col sm:flex-row gap-6 p-8 rounded-3xl bg-card border border-border shadow-md hover:shadow-xl transition-shadow"
+                            className="flex flex-col gap-8 p-8 rounded-3xl bg-card border border-border shadow-md hover:shadow-xl transition-shadow"
                         >
-                            <div className="shrink-0 flex flex-col items-center">
-                                {person.image ? (
-                                    <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-primary/10 mb-4">
-                                        <img
-                                            src={person.image}
-                                            alt={person.name}
-                                            className="w-full h-full object-cover"
-                                            style={{
-                                                objectPosition: person.objectPosition || "center",
-                                                transform: `scale(${person.scale || 1}) translate(${person.translateX || "0%"}, ${person.translateY || "0%"})`
-                                            }}
-                                        />
-                                    </div>
-                                ) : (
-                                    <div className="w-40 h-40 rounded-full bg-primary/10 border-4 border-primary/20 flex items-center justify-center mb-4">
-                                        <span className="text-5xl font-heading font-bold text-primary/40">{person.name.charAt(0)}</span>
-                                    </div>
-                                )}
+                            <div className="flex flex-col sm:flex-row gap-8 items-center sm:items-start text-center sm:text-left">
+                                <div className="shrink-0">
+                                    {person.image ? (
+                                        <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-primary/10">
+                                            <img
+                                                src={person.image}
+                                                alt={person.name}
+                                                className="w-full h-full object-cover"
+                                                style={{
+                                                    objectPosition: person.objectPosition || "center",
+                                                    transform: `scale(${person.scale || 1}) translate(${person.translateX || "0%"}, ${person.translateY || "0%"})`
+                                                }}
+                                            />
+                                        </div>
+                                    ) : (
+                                        <div className="w-48 h-48 rounded-full bg-primary/10 border-4 border-primary/20 flex items-center justify-center">
+                                            <span className="text-5xl font-heading font-bold text-primary/40">{person.name.charAt(0)}</span>
+                                        </div>
+                                    )}
+                                </div>
 
-                                <div className="flex gap-2">
-                                    {person.linkedin && (
-                                        <Link href={person.linkedin} target="_blank" className="p-2 bg-muted hover:bg-primary/20 rounded-full transition-colors text-muted-foreground hover:text-primary">
-                                            <Linkedin className="w-5 h-5" />
-                                        </Link>
-                                    )}
-                                    {person.youtube && (
-                                        <Link href={person.youtube} target="_blank" className="p-2 bg-muted hover:bg-red-500/20 rounded-full transition-colors text-muted-foreground hover:text-red-500">
-                                            <Youtube className="w-5 h-5" />
-                                        </Link>
-                                    )}
+                                <div className="flex flex-col flex-1 justify-center min-h-[12rem]">
+                                    <h3 className="text-4xl sm:text-4xl font-bold font-heading text-foreground mb-2">{person.name}</h3>
+                                    <p className="text-primary text-xl sm:text-2xl font-medium mb-6">{person.role}</p>
+
+                                    <div className="flex gap-3 justify-center sm:justify-start">
+                                        {person.linkedin && (
+                                            <Link href={person.linkedin} target="_blank" className="p-3 bg-muted hover:bg-primary/20 rounded-full transition-colors text-muted-foreground hover:text-primary">
+                                                <Linkedin className="w-6 h-6" />
+                                            </Link>
+                                        )}
+                                        {person.youtube && (
+                                            <Link href={person.youtube} target="_blank" className="p-3 bg-muted hover:bg-red-500/20 rounded-full transition-colors text-muted-foreground hover:text-red-500">
+                                                <Youtube className="w-6 h-6" />
+                                            </Link>
+                                        )}
+                                    </div>
                                 </div>
                             </div>
 
-                            <div className="flex flex-col text-center sm:text-left flex-1">
-                                <h3 className="text-3xl font-bold font-heading text-foreground mb-1 mt-2">{person.name}</h3>
-                                <p className="text-primary text-lg font-medium mb-4">{person.role}</p>
-                                <p className="text-muted-foreground text-lg leading-relaxed">
+                            <div className="w-full">
+                                <p className="text-muted-foreground text-lg leading-relaxed whitespace-pre-line">
                                     {person.bio}
                                 </p>
                             </div>

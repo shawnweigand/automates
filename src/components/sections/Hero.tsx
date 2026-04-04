@@ -45,7 +45,7 @@ export function Hero() {
                         variants={item}
                         className="font-heading text-5xl font-bold tracking-tight sm:text-7xl lg:text-8xl w-full text-balance"
                     >
-                        We help ambitious businesses <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/60">scale with AI.</span>
+                        We help ambitious businesses <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/60">scale with AI</span>
                     </motion.h1>
 
                     <motion.p
