@@ -1,8 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Linkedin, Youtube } from "lucide-react";
+import { Linkedin, Youtube, BadgeCheck } from "lucide-react";
 import Link from "next/link";
+
+const TECHNOLOGIES = [
+    { name: "Make.com", image: "/certs/make.png", status: "Certified" },
+    { name: "Anthropic Claude", image: "/certs/claude.png", status: "Certified" },
+    { name: "Microsoft Azure", image: "/certs/microsoft.png", status: "Certified" },
+    { name: "n8n", image: "/certs/n8n.png" }
+];
 
 const TEAM = [
     {
@@ -55,7 +62,7 @@ export function Bios() {
                         >
                             <div className="shrink-0 flex flex-col items-center">
                                 {person.image ? (
-                                    <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-primary/10 mb-4">
+                                    <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-primary/10 mb-4">
                                         <img
                                             src={person.image}
                                             alt={person.name}
@@ -67,8 +74,8 @@ export function Bios() {
                                         />
                                     </div>
                                 ) : (
-                                    <div className="w-32 h-32 rounded-full bg-primary/10 border-4 border-primary/20 flex items-center justify-center mb-4">
-                                        <span className="text-4xl font-heading font-bold text-primary/40">{person.name.charAt(0)}</span>
+                                    <div className="w-40 h-40 rounded-full bg-primary/10 border-4 border-primary/20 flex items-center justify-center mb-4">
+                                        <span className="text-5xl font-heading font-bold text-primary/40">{person.name.charAt(0)}</span>
                                     </div>
                                 )}
 
@@ -86,15 +93,66 @@ export function Bios() {
                                 </div>
                             </div>
 
-                            <div className="flex flex-col text-center sm:text-left">
-                                <h3 className="text-2xl font-bold font-heading text-foreground mb-1">{person.name}</h3>
-                                <p className="text-primary font-medium mb-4">{person.role}</p>
-                                <p className="text-muted-foreground leading-relaxed">
+                            <div className="flex flex-col text-center sm:text-left flex-1">
+                                <h3 className="text-3xl font-bold font-heading text-foreground mb-1 mt-2">{person.name}</h3>
+                                <p className="text-primary text-lg font-medium mb-4">{person.role}</p>
+                                <p className="text-muted-foreground text-lg leading-relaxed">
                                     {person.bio}
                                 </p>
                             </div>
                         </motion.div>
                     ))}
+                </div>
+
+                {/* Team Specializations */}
+                <div className="mt-20">
+                    <p className="text-center text-muted-foreground text-lg mb-8">
+                        We specialize in
+                    </p>
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: "-50px" }}
+                        transition={{ duration: 0.5, delay: 0.4 }}
+                        className="flex flex-wrap justify-center items-center gap-12 md:gap-24 text-muted-foreground"
+                    >
+                        {TECHNOLOGIES.map((tech, index) => (
+                            <div key={index} className="relative flex flex-col items-center group">
+                                {tech.image ? (
+                                    <>
+                                        <div className="relative mb-3">
+                                            <img
+                                                src={tech.image}
+                                                alt={tech.name}
+                                                className="h-16 w-auto object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
+                                            />
+                                        </div>
+
+                                        {tech.status && (
+                                            <div className="flex items-center gap-1.5 grayscale group-hover:grayscale-0 opacity-40 group-hover:opacity-100 transition-all duration-300">
+                                                <BadgeCheck className="w-4 h-4 text-primary" />
+                                                <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-primary">
+                                                    {tech.status}
+                                                </span>
+                                            </div>
+                                        )}
+
+                                        {/* Tooltip */}
+                                        <div className="absolute -top-12 left-1/2 -translate-x-1/2 bg-foreground text-background text-sm font-medium px-4 py-2 rounded-md opacity-0 group-hover:opacity-100 group-hover:-translate-y-1 transition-all duration-300 whitespace-nowrap pointer-events-none shadow-lg z-20">
+                                            {tech.name}
+                                            {/* Tooltip Arrow */}
+                                            <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-foreground rotate-45"></div>
+                                        </div>
+                                    </>
+                                ) : (
+                                    <div className="flex flex-col items-center gap-1">
+                                        <span className="font-heading font-semibold tracking-wide uppercase text-sm">{tech.name}</span>
+                                        {tech.status && <span className="text-[10px] text-primary font-bold uppercase">{tech.status}</span>}
+                                    </div>
+                                )}
+                            </div>
+                        ))}
+                    </motion.div>
                 </div>
             </div>
         </section>

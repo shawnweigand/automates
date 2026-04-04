@@ -7,10 +7,10 @@ import { motion, useAnimationFrame, useMotionValue } from "framer-motion";
 const LOGOS = [
     { id: 1, name: "The Estée Lauder Companies Inc.", image: "/logos/esteelauder.png", scale: 1.5 },
     { id: 2, name: "FlowSec AI", image: "/logos/flowsec.png", scale: 1 },
+    { id: 3, name: "LiveFlow", image: "/logos/liveflow.png", scale: 0.75 },
     // redmax
     // lazard
     // rippling
-    // liveflow
     // contentflow?
     // collegeadvisor?
 ];
@@ -50,11 +50,11 @@ export function TrustedBy() {
 
     return (
         <section id="trusted-by" className="py-24 bg-background overflow-hidden relative">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10 mb-12">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
                 <div className="text-center max-w-2xl mx-auto">
-                    <h2 className="font-heading text-2xl font-bold sm:text-3xl text-foreground mb-4">
+                    <p className="text-center text-foreground text-lg mb-8 font-medium">
                         Trusted by industry leaders
-                    </h2>
+                    </p>
                 </div>
             </div>
 

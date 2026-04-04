@@ -6,15 +6,15 @@ import { CheckCircle2, Network, Users, Activity } from "lucide-react";
 
 const DIFFERENTIATORS = [
     {
-        title: "Holistic Audits, Not Just Execution",
+        title: "Holistic Discovery",
         description: "We don't just ask what you want to automate. We analyze your entire workflow to find the highest-ROI bottlenecks.",
     },
     {
-        title: "Hands-on Team Education",
+        title: "Hands-on Implementation",
         description: "Technology is useless if your team doesn't adopt it. We train your staff so AI becomes a multiplier, not a hurdle.",
     },
     {
-        title: "Long-term Management",
+        title: "Strategic Partnership",
         description: "APIs break and models evolve. We stay on as your strategic partner to ensure your systems remain cutting-edge.",
     },
 ];
@@ -65,7 +65,7 @@ export function About() {
     };
 
     return (
-        <section id="about" className="py-24 bg-slate-50 border-t border-border/40 relative">
+        <section id="about" className="py-24 bg-background border-t border-border/40 relative">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
@@ -77,7 +77,7 @@ export function About() {
                         className="max-w-xl"
                     >
                         <h2 className="font-heading text-3xl font-bold sm:text-4xl md:text-5xl mb-6">
-                            Not just an automation agency.<br />
+                            Not just an agency.<br />
                             <span className="text-primary">Your transformation partner.</span>
                         </h2>
                         <p className="text-muted-foreground text-lg mb-8 text-balance">

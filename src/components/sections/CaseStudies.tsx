@@ -34,7 +34,7 @@ const CASE_STUDIES = [
 
 export function CaseStudies() {
     return (
-        <section id="case-studies" className="py-24 bg-slate-50 border-t border-border/40 overflow-hidden">
+        <section id="case-studies" className="py-24 bg-background border-t border-border/40 overflow-hidden">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
                 <div className="text-center max-w-3xl mx-auto mb-16">
                     <h2 className="font-heading text-3xl font-bold sm:text-4xl text-foreground mb-4">

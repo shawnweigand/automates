@@ -52,7 +52,7 @@ export function Hero() {
                         variants={item}
                         className="mt-8 max-w-2xl text-lg text-muted-foreground sm:text-xl text-balance"
                     >
-                        Stop settling for generic templates. We dive deep into your operations to architect, implement, and manage bespoke AI systems that drive actual measurable growth.
+                        Deep dive into your operations to architect, implement, and manage bespoke automation systems that drive actual measurable growth.
                     </motion.p>
 
                     <motion.div
@@ -60,11 +60,8 @@ export function Hero() {
                         className="mt-10 flex flex-col sm:flex-row gap-4 items-center justify-center w-full"
                     >
                         <Link href="#contact" className="inline-flex h-14 px-8 rounded-full items-center justify-center text-base bg-primary text-primary-foreground hover:bg-primary/90 w-full sm:w-auto group font-medium transition-colors">
-                            Book your AI Audit
+                            Discover your strategy
                             <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                        </Link>
-                        <Link href="#services" className="inline-flex h-14 px-8 rounded-full items-center justify-center text-base border border-border bg-transparent hover:bg-muted w-full sm:w-auto font-medium transition-colors">
-                            Explore Services
                         </Link>
                     </motion.div>
                 </motion.div>
