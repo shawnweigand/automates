@@ -79,8 +79,8 @@ export function Testimonials() {
                     style={{ x }}
                     className="flex gap-8 w-max px-4"
                 >
-                    {/* Render two identical sets to allow seamless wrapping */}
-                    {[0, 1].map((setIndex) => (
+                    {/* Render multiple identical sets to allow seamless wrapping across wide screens */}
+                    {[0, 1, 2, 3].map((setIndex) => (
                         <div key={`set-${setIndex}`} className="flex gap-8">
                             {TESTIMONIALS.map((testimonial, index) => (
                                 <div

@@ -11,11 +11,11 @@ const DIFFERENTIATORS = [
     },
     {
         title: "Hands-on Implementation",
-        description: "Technology is useless if your team doesn't adopt it. We train your staff so AI becomes a multiplier, not a hurdle.",
+        description: "We don't just hand you a blueprint. We roll up our sleeves to build, test, and deploy the actual automation systems into your existing stack.",
     },
     {
         title: "Strategic Partnership",
-        description: "APIs break and models evolve. We stay on as your strategic partner to ensure your systems remain cutting-edge.",
+        description: "Systems break and technology evolves. We partner with you to actively monitor, maintain, and optimize your workflows as your business grows.",
     },
 ];
 

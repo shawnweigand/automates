@@ -5,10 +5,19 @@ import { Linkedin, Youtube, BadgeCheck } from "lucide-react";
 import Link from "next/link";
 
 const TECHNOLOGIES = [
-    { name: "Make.com", image: "/certs/make.png", status: "Certified" },
-    { name: "Anthropic Claude", image: "/certs/claude.png", status: "Certified" },
-    { name: "Microsoft Azure", image: "/certs/microsoft.png", status: "Certified" },
-    { name: "n8n", image: "/certs/n8n.png" }
+    { name: "Make", image: "/tools/make.png", status: "Certified" },
+    { name: "Anthropic Claude", image: "/tools/claude.png", status: "Certified" },
+    { name: "Microsoft Azure Cloud", image: "/tools/microsoft.png", status: "Certified" },
+    { name: "n8n", image: "/tools/n8n.png" },
+    { name: "Clay", image: "/tools/clay.webp" },
+    { name: "Zapier", image: "/tools/zapier.png" },
+    { name: "Apollo", image: "/tools/apollo.webp" },
+    { name: "Instantly", image: "/tools/instantly.png" },
+    { name: "Monday", image: "/tools/monday.png" },
+    { name: "Salesforce", image: "/tools/salesforce.png" },
+    { name: "QuickBooks", image: "/tools/quickbooks.svg" },
+    { name: "Slack", image: "/tools/slack.png" },
+    { name: "Notion", image: "/tools/notion.png" }
 ];
 
 const TEAM = [
@@ -25,7 +34,7 @@ const TEAM = [
         translateY: "10%",
     },
     {
-        name: "JC Unser",
+        name: "John Unser",
         role: "Co-Founder",
         bio: "Place a short biography here. Discuss their technical leadership, past projects, and deep knowledge of AI implementation.",
         image: "/bios/jc.JPG",

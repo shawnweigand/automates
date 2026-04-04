@@ -1,44 +1,38 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { PartyPopper, Users, BarChart3, Briefcase, CheckCircle2 } from "lucide-react";
+import { Users, BarChart3, Settings, CheckCircle2 } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 
 const DEPARTMENTS = [
     {
-        name: "Event Services",
-        icon: PartyPopper,
+        name: "Operations",
+        icon: Settings,
         useCases: [
-            "Vendor & Contract Automation",
-            "Automated Attendee Onboarding",
-            "Dynamic Scheduling & Reminders"
+            "Client & Project Onboarding",
+            "Invoice Processing",
+            "Reporting & Dashboards",
+            "Scheduling",
+            "Project Management"
         ]
     },
     {
-        name: "HR & Recruiting",
+        name: "HR & Staffing",
         icon: Users,
         useCases: [
-            "AI Candidate Screening",
-            "Automated Employee Onboarding",
-            "Interview Scheduling Workflows"
+            "Candidate Screening",
+            "Employee Onboarding",
+            "Interview Scheduling & Communications"
         ]
     },
     {
         name: "Sales & Marketing",
         icon: BarChart3,
         useCases: [
-            "Automated Lead Gen & Scoring",
-            "Personalized Email Sequences",
-            "Proposal & Contract Generation"
-        ]
-    },
-    {
-        name: "Operations & Finance",
-        icon: Briefcase,
-        useCases: [
-            "Invoice Processing via AI",
-            "Automated Expense Approvals",
-            "Centralized Reporting Pipelines"
+            "Lead Gen & Scoring",
+            "Sales Call Analysis",
+            "Personalized Email Outreach",
+            "Content Generation"
         ]
     }
 ];
@@ -67,27 +61,33 @@ export function HowWeHelp() {
                         How we <span className="text-primary">Help</span>
                     </h2>
                     <p className="text-muted-foreground text-lg">
-                        We build custom AI automations that unlock bandwidth and accelerate growth, no matter the department.
+                        We build custom solutions that unlock bandwidth and accelerate growth across all your departments.
                     </p>
                 </div>
 
-                <motion.div 
+                <motion.div
                     variants={container}
                     initial="hidden"
                     whileInView="show"
                     viewport={{ once: true, margin: "-50px" }}
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-fr"
                 >
                     {DEPARTMENTS.map((dept, index) => (
-                        <motion.div key={index} variants={item} className="h-full">
-                            <Card className="h-full bg-card shadow-md hover:shadow-lg border-border/50 hover:border-primary/30 transition-all group overflow-hidden">
-                                <CardHeader className="pb-4">
+                        <motion.div
+                            key={index}
+                            variants={item}
+                            className={`flex flex-col h-full ${
+                                index === 2 ? "md:col-span-2 lg:col-span-1 md:max-w-sm md:mx-auto w-full" : ""
+                            }`}
+                        >
+                            <Card className="flex flex-col h-full bg-card shadow-md hover:shadow-lg border-border/50 hover:border-primary/30 transition-all group overflow-hidden">
+                                <CardHeader className="pb-4 shrink-0">
                                     <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                                         <dept.icon className="h-6 w-6 text-primary" />
                                     </div>
                                     <CardTitle className="text-xl font-heading">{dept.name}</CardTitle>
                                 </CardHeader>
-                                <CardContent>
+                                <CardContent className="flex-grow">
                                     <ul className="space-y-3">
                                         {dept.useCases.map((useCase, idx) => (
                                             <li key={idx} className="flex items-start gap-3">

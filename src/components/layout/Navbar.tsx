@@ -15,8 +15,10 @@ import {
 
 const NAV_LINKS = [
     { name: "About", href: "#about" },
-    { name: "Services", href: "#services" },
+    { name: "How We Help", href: "#how-we-help" },
     { name: "Case Studies", href: "#case-studies" },
+    { name: "Testimonials", href: "#testimonials" },
+    { name: "Team", href: "#team" },
     { name: "FAQ", href: "#faq" },
 ];
 
