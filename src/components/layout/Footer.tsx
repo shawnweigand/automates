@@ -57,7 +57,6 @@ export function Footer() {
                         <Link href="#about" className="hover:text-primary transition-colors">About</Link>
                         <Link href="#services" className="hover:text-primary transition-colors">Services</Link>
                         <Link href="#case-studies" className="hover:text-primary transition-colors">Case Studies</Link>
-                        <Link href="mailto:hello@automates.com" className="hover:text-primary transition-colors">hello@automates.com</Link>
                     </nav>
 
                     <p className="text-sm text-muted-foreground">

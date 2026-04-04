@@ -58,7 +58,7 @@ export function HowWeHelp() {
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
                 <div className="text-center max-w-2xl mx-auto mb-16">
                     <h2 className="font-heading text-3xl font-bold sm:text-4xl text-foreground mb-4">
-                        How we <span className="text-primary">Help</span>
+                        How We <span className="text-primary">Help</span>
                     </h2>
                     <p className="text-muted-foreground text-lg">
                         We build custom solutions that unlock bandwidth and accelerate growth across all your departments.
@@ -76,9 +76,8 @@ export function HowWeHelp() {
                         <motion.div
                             key={index}
                             variants={item}
-                            className={`flex flex-col h-full ${
-                                index === 2 ? "md:col-span-2 lg:col-span-1 md:max-w-sm md:mx-auto w-full" : ""
-                            }`}
+                            className={`flex flex-col h-full ${index === 2 ? "md:col-span-2 lg:col-span-1 md:max-w-sm md:mx-auto w-full" : ""
+                                }`}
                         >
                             <Card className="flex flex-col h-full bg-card shadow-md hover:shadow-lg border-border/50 hover:border-primary/30 transition-all group overflow-hidden">
                                 <CardHeader className="pb-4 shrink-0">
