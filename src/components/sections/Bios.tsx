@@ -36,7 +36,7 @@ const TEAM = [
     {
         name: "John Unser",
         role: "Co-Founder",
-        bio: "On paper, John's experience is centered around building high-performing revenue teams at VC-backed SaaS companies. But between the lines, he's an automation expert who is energized by building with AI.\n\nWhile scaling revenue teams, John found that the largest efficiency gains often came from optimizing his team's backend processes. So he spent much of his time building AI-based systems that made his teams exponentially more efficient. He's built inbound lead scoring systems, cold email infrastructure, automated CRM enrichment, and complex SOPs. He uses tools like n8n, Clay, and Claude Code to wire it all together, and he's well-versed across a wide range of softwares and tools.",
+        bio: "On paper, John's experience is centered around building high-performing revenue teams at VC-backed SaaS companies. But between the lines, he's an automation expert who is energized by building with AI.\n\nWhile scaling revenue teams, John found that the largest efficiency gains often came from optimizing his team's backend processes. So he spent much of his time building AI-based systems for his teams. He's built inbound lead scoring systems, cold email infrastructure, automated CRM enrichment, and complex internal workflows using tools like n8n, Clay, and Claude Code to wire it all together. He's well-versed across a wide range of softwares and tools, and his curiosity drives him to learn new systems constantly.",
         image: "/bios/jc.JPG",
         linkedin: "https://www.linkedin.com/in/john-charles-unser/",
         scale: 2.5,
