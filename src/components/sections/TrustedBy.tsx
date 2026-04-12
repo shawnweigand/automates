@@ -5,14 +5,14 @@ import { motion, useAnimationFrame, useMotionValue } from "framer-motion";
 
 // Add your logo paths here after dropping them in the public/logos folder!
 const LOGOS = [
-    { id: 1, name: "The Estée Lauder Companies Inc.", image: "/logos/esteelauder.png", scale: 1.5 },
-    { id: 2, name: "FlowSec AI", image: "/logos/flowsec.png", scale: 1 },
+    { id: 1, name: "The Estée Lauder Companies Inc.", image: "/logos/esteelauder.png", scale: 1 },
+    { id: 2, name: "FlowSec AI", image: "/logos/flowsec.png", scale: 0.75 },
     { id: 3, name: "LiveFlow", image: "/logos/liveflow.png", scale: 0.75 },
-    // redmax
-    // lazard
-    // rippling
-    // contentflow?
-    // collegeadvisor?
+    { id: 4, name: "Redmax", image: "/logos/redmax.webp", scale: 0.75 },
+    { id: 5, name: "Lazard", image: "/logos/lazard.svg", scale: 0.75 },
+    // { id: 6, name: "Rippling", image: "/logos/rippling.png", scale: 0.75 },
+    // { id: 7, name: "Contentflow", image: "/logos/contentflow.png", scale: 0.75 },
+    // { id: 8, name: "CollegeAdvisor", image: "/logos/collegeadvisor.png", scale: 0.75 },
 ];
 
 export function TrustedBy() {
