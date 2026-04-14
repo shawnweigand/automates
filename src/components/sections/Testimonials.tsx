@@ -17,12 +17,12 @@ const TESTIMONIALS = [
         role: "Director, FlowSec AI",
         image: "/testimonials/ibrahim.jpg",
     },
-    // {
-    //     quote: "What impressed me most was the ongoing management. When OpenAI shipped an update that broke our old parser, they had it fixed before we even noticed.",
-    //     name: "Emily Chen",
-    //     role: "Founder, Acme Logistics",
-    //     // image: "/images/emily.jpg"
-    // }
+    {
+        quote: "[AutoMates] consistently stood out as someone with deep expertise, strong execution, and a genuine drive to improve the way teams operate... [AutoMates] combines technical depth with practical thinking, and has a real talent for building solutions that create lasting value.",
+        name: "Mackensie Alvarez",
+        role: "Director of SRE & Engineering, The Estée Lauder Companies Inc.",
+        image: "/testimonials/mack.jpeg"
+    }
 ];
 
 export function Testimonials() {
