@@ -8,6 +8,7 @@ import { HowWeHelp } from "@/components/sections/HowWeHelp";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { Bios } from "@/components/sections/Bios";
 import { Faq } from "@/components/sections/Faq";
+import { OurProcess } from "@/components/sections/OurProcess";
 import { FloatingContactButton } from "@/components/ui/FloatingContactButton";
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
         <TrustedBy />
         <About />
         <HowWeHelp />
+        <OurProcess />
         {/* <CaseStudies /> */}
         <Testimonials />
         <Bios />

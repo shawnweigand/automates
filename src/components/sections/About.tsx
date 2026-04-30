@@ -1,150 +1,126 @@
 "use client";
 
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Search, Wrench, Handshake } from "lucide-react";
-import { PriorityListCard } from "@/components/ui/PriorityListCard";
-import { ImplementationCard } from "@/components/ui/ImplementationCard";
-import { PartnershipCard } from "@/components/ui/PartnershipCard";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { TrendingUp, Inbox, GitFork } from "lucide-react";
 
-const DIFFERENTIATORS = [
+const CARDS = [
     {
-        title: "Holistic Discovery",
-        description: "We don't just ask what you want to automate. We analyze your entire workflow to find the highest-ROI bottlenecks.",
-        icon: Search,
+        icon: TrendingUp,
+        title: "Unpredictable Revenue",
+        description:
+            "Relying on referrals and word-of-mouth creates inconsistent revenue cycles. Design a systematic lead engine for predictable growth.",
+        tag: "LEAD GENERATION",
     },
     {
-        title: "End-to-End Implementation",
-        description: "We don't just hand you a blueprint. We roll up our sleeves to build, test, and deploy the actual automation systems into your existing stack.",
-        icon: Wrench,
+        icon: Inbox,
+        title: "Drowning in Manual Work",
+        description:
+            "Your team spends hours on data entry, follow-ups and scheduling. Free them to focus on high-value work that actually moves the needle.",
+        tag: "HIGH OVERHEAD",
     },
     {
-        title: "Strategic Partnership",
-        description: "Systems break and technology evolves. We partner with you to actively monitor, maintain, and optimize your workflows as your business grows.",
-        icon: Handshake,
+        icon: GitFork,
+        title: "No Systems to Scale On",
+        description:
+            "When your process lives in people's heads, you can't grow without chaos. Delegate with confidence knowing that tasks will get done the same way every time.",
+        tag: "UNSCALABLE",
     },
 ];
 
-/* ────────────────────────────────────────────
-   Main About Section
-   ──────────────────────────────────────────── */
 export function About() {
-    const [activeIndex, setActiveIndex] = useState(0);
+    const sectionRef = useRef<HTMLDivElement>(null);
 
-    const renderCard = () => {
-        if (activeIndex === 0) {
-            return (
-                <motion.div
-                    key="discovery"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    transition={{ duration: 0.3 }}
-                    className="w-full h-full flex items-center justify-center"
-                >
-                    <PriorityListCard />
-                </motion.div>
-            );
-        }
-        if (activeIndex === 1) {
-            return (
-                <motion.div
-                    key="implementation"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    transition={{ duration: 0.3 }}
-                    className="w-full h-full flex items-center justify-center"
-                >
-                    <ImplementationCard />
-                </motion.div>
-            );
-        }
-        if (activeIndex === 2) {
-            return (
-                <motion.div
-                    key="partnership"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    transition={{ duration: 0.3 }}
-                    className="w-full h-full flex items-center justify-center"
-                >
-                    <PartnershipCard />
-                </motion.div>
-            );
-        }
-        return (
-            <motion.div
-                key={activeIndex}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 0.3 }}
-                className="w-full h-full rounded-2xl bg-card shadow-lg border border-border"
-            />
-        );
-    };
+    const { scrollYProgress } = useScroll({
+        target: sectionRef,
+        offset: ["start end", "center center"],
+    });
+
+    // Card 0 (left) transforms
+    const x0 = useTransform(scrollYProgress, [0, 1], ["0%", "-110%"]);
+    const rotate0 = useTransform(scrollYProgress, [0, 1], [0, -6]);
+    const opacity0 = useTransform(scrollYProgress, [0, 0.2], [0, 1]);
+
+    // Card 1 (center) transforms
+    const y1 = useTransform(scrollYProgress, [0, 1], ["60px", "0px"]);
+    const opacity1 = useTransform(scrollYProgress, [0, 0.2], [0, 1]);
+
+    // Card 2 (right) transforms
+    const x2 = useTransform(scrollYProgress, [0, 1], ["0%", "110%"]);
+    const rotate2 = useTransform(scrollYProgress, [0, 1], [0, 6]);
+    const opacity2 = useTransform(scrollYProgress, [0, 0.2], [0, 1]);
 
     return (
-        <section id="about" className="py-24 bg-background border-t border-border/40 relative">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <section
+            id="about"
+            ref={sectionRef}
+            className="py-24 bg-background border-t border-border/40 relative overflow-hidden"
+        >
+            {/* Background glow */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-primary/10 opacity-40 blur-[100px] rounded-full pointer-events-none" />
 
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
+                {/* Header */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-80px" }}
+                    transition={{ duration: 0.7 }}
+                    className="text-center mb-20"
+                >
+                    <h2 className="font-heading text-3xl font-bold sm:text-4xl text-foreground mb-6 leading-tight">
+                        You&apos;re leaving{" "}
+                        <span className="text-primary">money on the table</span>
+                    </h2>
+                    <p className="text-muted-foreground text-lg max-w-xl mx-auto text-balance">
+                        Most SMBs are hemorrhaging time and revenue on problems that have already been solved — they just haven&apos;t been built for you yet.
+                    </p>
+                </motion.div>
+
+                {/* Cards container */}
+                <div className="relative flex items-center justify-center min-h-[400px]">
+                    {/* Card 0 — Left */}
                     <motion.div
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true, margin: "-100px" }}
-                        transition={{ duration: 0.8 }}
-                        className="max-w-xl self-center"
+                        style={{ x: x0, rotate: rotate0, opacity: opacity0, zIndex: 10 }}
+                        className="absolute w-full max-w-[300px] sm:max-w-[320px]"
                     >
-                        <h2 className="font-heading text-3xl font-bold sm:text-4xl md:text-5xl mb-6">
-                            Not just an agency.<br />
-                            <span className="text-primary">Your transformation partner.</span>
-                        </h2>
-                        <p className="text-muted-foreground text-lg mb-8 text-balance">
-                            Most agencies build a bot and walk away. At AutoMates, we believe true transformation requires deep understanding, strategic implementation, and ongoing education.
-                            We bridge the gap between advanced AI capabilities and your daily business operations.
-                        </p>
-
-                        <div className="flex flex-col gap-2">
-                            {DIFFERENTIATORS.map((item, index) => {
-                                const Icon = item.icon;
-                                return (
-                                    <div
-                                        key={index}
-                                        onClick={() => setActiveIndex(index)}
-                                        className={`flex gap-4 p-3.5 rounded-2xl cursor-pointer transition-all border ${activeIndex === index ? 'bg-card border-primary/30 shadow-md' : 'border-transparent hover:bg-card/50'}`}
-                                    >
-                                        <div className="flex-shrink-0 mt-1">
-                                            <Icon className={`h-5 w-5 transition-colors ${activeIndex === index ? 'text-primary' : 'text-muted-foreground'}`} />
-                                        </div>
-                                        <div>
-                                            <h3 className={`font-semibold text-base md:text-lg transition-colors ${activeIndex === index ? 'text-foreground' : 'text-foreground/80'}`}>{item.title}</h3>
-                                            <p className="text-muted-foreground mt-0.5 text-sm">{item.description}</p>
-                                        </div>
-                                    </div>
-                                );
-                            })}
-                        </div>
+                        <CardItem card={CARDS[0]} />
                     </motion.div>
 
+                    {/* Card 1 — Center */}
                     <motion.div
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true, margin: "-100px" }}
-                        transition={{ duration: 0.8 }}
-                        className="relative w-full h-full min-h-[300px] lg:min-h-[400px] flex items-center justify-center p-2 lg:p-4"
+                        style={{ y: y1, opacity: opacity1, zIndex: 20 }}
+                        className="relative w-full max-w-[300px] sm:max-w-[320px]"
                     >
-                        <AnimatePresence mode="wait">
-                            <div className="w-full h-full">
-                                {renderCard()}
-                            </div>
-                        </AnimatePresence>
+                        <CardItem card={CARDS[1]} />
                     </motion.div>
 
+                    {/* Card 2 — Right */}
+                    <motion.div
+                        style={{ x: x2, rotate: rotate2, opacity: opacity2, zIndex: 10 }}
+                        className="absolute w-full max-w-[300px] sm:max-w-[320px]"
+                    >
+                        <CardItem card={CARDS[2]} />
+                    </motion.div>
                 </div>
             </div>
         </section>
+    );
+}
+
+function CardItem({ card }: { card: typeof CARDS[0] }) {
+    const Icon = card.icon;
+    return (
+        <div className="group flex flex-col gap-4 p-8 rounded-3xl bg-card border border-border shadow-xl min-h-[340px] transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:border-primary/30">
+            <div className="h-10 w-10 rounded-xl bg-muted flex items-center justify-center border border-border transition-all duration-300 group-hover:bg-primary/10 group-hover:border-primary/30">
+                <Icon className="h-5 w-5 text-foreground/70 transition-colors duration-300 group-hover:text-primary" />
+            </div>
+            <h3 className="font-heading text-xl font-bold text-foreground leading-snug">
+                {card.title}
+            </h3>
+            <p className="text-muted-foreground text-sm leading-relaxed flex-1">
+                {card.description}
+            </p>
+        </div>
     );
 }
