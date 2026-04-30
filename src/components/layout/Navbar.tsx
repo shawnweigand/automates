@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu } from "lucide-react";
+import { Menu, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import {
@@ -56,6 +56,7 @@ export function Navbar() {
                         </Link>
                     ))}
                     <Link href="#contact" className="rounded-full px-6 bg-primary text-primary-foreground hover:bg-primary/90 inline-flex h-9 items-center justify-center text-sm font-medium transition-colors">
+                        <Calendar className="mr-2 h-4 w-4" />
                         Book a Call
                     </Link>
                 </nav>
@@ -92,6 +93,7 @@ export function Navbar() {
                                 <SheetClose
                                     render={<Link href="#contact" className="mt-4 w-full rounded-full bg-primary text-primary-foreground hover:bg-primary/90 inline-flex h-9 items-center justify-center px-4 py-2 text-sm font-medium transition-colors" />}
                                 >
+                                    <Calendar className="mr-2 h-4 w-4" />
                                     Book a Call
                                 </SheetClose>
                             </nav>

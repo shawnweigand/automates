@@ -19,7 +19,7 @@ export function Footer() {
                     Ready to scale <span className="text-primary">intelligently?</span>
                 </h2>
                 <p className="text-muted-foreground text-lg sm:text-xl mb-12 max-w-2xl text-balance">
-                    Book a free 45-minute discovery call with our team. We'll identify at least one immediate efficiency for your business on the call.
+                    Book a free 30-minute discovery call with our team. We'll identify at least one immediate efficiency for your business on the call.
                 </p>
 
                 {/* 
