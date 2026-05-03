@@ -11,7 +11,11 @@ const LOGOS = [
     { id: 6, name: "White Hat Growth Partners", image: "/logos/whgp.svg", scale: 1 },
     { id: 7, name: "Shauna Moran", image: "/logos/shaunamoran.webp", scale: 0.5 },
     { id: 8, name: "Vacutek", image: "/logos/vacutek.webp", scale: 0.5 },
+    //{ id: 9,  name: "Thermal Diagnostics Partners",    image: "/logos/thermaldiag.webp",  scale: 0.5 },
     { id: 10, name: "Ziff Davis", image: "/logos/ziffdavis.svg", scale: 0.5 },
+    //{ id: 11, name: "Rippling",                        image: "/logos/rippling.png",      scale: 0.75 },
+    //{ id: 12, name: "Contentflow",                     image: "/logos/contentflow.png",   scale: 0.75 },
+    //{ id: 13, name: "CollegeAdvisor",                  image: "/logos/collegeadvisor.png", scale: 0.75 },
 ];
 
 const GRID_COLS = 4;
@@ -38,10 +42,10 @@ function getNeighborIndices(cellIdx: number): number[] {
     const row = Math.floor(cellIdx / GRID_COLS);
     const col = cellIdx % GRID_COLS;
     const neighbors: number[] = [];
-    if (row > 0)              neighbors.push((row - 1) * GRID_COLS + col);
-    if (row < GRID_ROWS - 1)  neighbors.push((row + 1) * GRID_COLS + col);
-    if (col > 0)              neighbors.push(row * GRID_COLS + (col - 1));
-    if (col < GRID_COLS - 1)  neighbors.push(row * GRID_COLS + (col + 1));
+    if (row > 0) neighbors.push((row - 1) * GRID_COLS + col);
+    if (row < GRID_ROWS - 1) neighbors.push((row + 1) * GRID_COLS + col);
+    if (col > 0) neighbors.push(row * GRID_COLS + (col - 1));
+    if (col < GRID_COLS - 1) neighbors.push(row * GRID_COLS + (col + 1));
     return neighbors;
 }
 
