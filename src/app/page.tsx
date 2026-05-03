@@ -9,6 +9,7 @@ import { Testimonials } from "@/components/sections/Testimonials";
 import { Bios } from "@/components/sections/Bios";
 import { Faq } from "@/components/sections/Faq";
 import { OurProcess } from "@/components/sections/OurProcess";
+import { Stats } from "@/components/sections/Stats";
 import { FloatingContactButton } from "@/components/ui/FloatingContactButton";
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
         <TrustedBy />
+        {/* <Stats /> */}
         <About />
         <HowWeHelp />
         <OurProcess />
