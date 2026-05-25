@@ -184,7 +184,7 @@ function LogoCell({ state, row, col }: { state: CellState; row: number; col: num
 
 // ── Main component ────────────────────────────────────────────────────────────
 
-export function TrustedBy() {
+export function TrustedBy({ showTitle = true }: { showTitle?: boolean } = {}) {
     const [grid, setGrid] = useState<CellState[]>(() =>
         buildInitialGrid().map((id) => ({ currentLogoId: id, nextLogoId: null, animating: false })),
     );
@@ -258,9 +258,11 @@ export function TrustedBy() {
 
             <section id="trusted-by" className="py-24 bg-background">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-                    <p className="text-center text-foreground text-lg mb-12 font-medium">
-                        Trusted by industry leaders
-                    </p>
+                    {showTitle && (
+                        <p className="text-center text-foreground text-lg mb-12 font-medium">
+                            Trusted by industry leaders
+                        </p>
+                    )}
 
                     {/* 4 × 3 grid */}
                     <div
