@@ -12,7 +12,7 @@ const LOGOS = [
     { id: 7, name: "Shauna Moran", image: "/logos/shaunamoran.webp", scale: 0.5 },
     { id: 8, name: "Vacutek", image: "/logos/vacutek.webp", scale: 0.5 },
     //{ id: 9,  name: "Thermal Diagnostics Partners",    image: "/logos/thermaldiag.webp",  scale: 0.5 },
-    { id: 10, name: "Ziff Davis", image: "/logos/ziffdavis.svg", scale: 0.5 },
+    // { id: 10, name: "Ziff Davis", image: "/logos/ziffdavis.svg", scale: 0.5 },
     //{ id: 11, name: "Rippling",                        image: "/logos/rippling.png",      scale: 0.75 },
     //{ id: 12, name: "Contentflow",                     image: "/logos/contentflow.png",   scale: 0.75 },
     //{ id: 13, name: "CollegeAdvisor",                  image: "/logos/collegeadvisor.png", scale: 0.75 },
