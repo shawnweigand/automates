@@ -12,7 +12,7 @@ import { Faq } from "@/components/sections/Faq";
 import { Footer } from "@/components/layout/Footer";
 import { CheckCircle2, Search, Link as LinkIcon, Cpu, Handshake } from "lucide-react";
 
-const ROTATING_TEXTS = ["Online Coaching", "Agencies", "Consultants"];
+const ROTATING_TEXTS = ["Online Coaches", "Agencies", "Consultants"];
 
 const CLAUDE_SERVICES = [
   {

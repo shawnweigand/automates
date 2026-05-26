@@ -66,17 +66,15 @@ function buildInitialGrid(): number[] {
     const result: number[] = new Array(GRID_SIZE).fill(-1);
 
     for (let i = 0; i < GRID_SIZE; i++) {
-        const valid = shuffle(
-            LOGOS.filter((logo) => {
-                // count so far
-                const count = result.slice(0, i).filter((id) => id === logo.id).length;
-                if (count >= MAX_LOGO_DUPLICATES) return false;
-                // if adding here would make 2, neither this cell nor its already-placed
-                // neighbors may already show this logo adjacently
-                if (count === 1 && wouldBeAdjacent(logo.id, i, result)) return false;
-                return true;
-            }),
-        );
+        const valid = LOGOS.filter((logo) => {
+            // count so far
+            const count = result.slice(0, i).filter((id) => id === logo.id).length;
+            if (count >= MAX_LOGO_DUPLICATES) return false;
+            // if adding here would make 2, neither this cell nor its already-placed
+            // neighbors may already show this logo adjacently
+            if (count === 1 && wouldBeAdjacent(logo.id, i, result)) return false;
+            return true;
+        });
         result[i] = valid[0]?.id ?? LOGOS[0].id;
     }
     return result;
