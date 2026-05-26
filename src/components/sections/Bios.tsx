@@ -24,7 +24,7 @@ const TEAM = [
     {
         name: "Shawn Weigand",
         role: "Co-Founder",
-        bio: "With a background in engineering and cloud infrastructure for Fortune 500 companies, Shawn brings a builder's mindset to every engagement. His foundation was built on writing Javascript and Python scripts to automate IT tasks, and has evolved into designing end-to-end systems using tools like n8n and Claude to unlock measurable ROI for operations-heavy teams. \n\nToday, he's all-in on AI - integrating Claude, Gemini, and OpenAI into business workflows. When he's not building for clients, Shawn shares AI and automation strategies on YouTube and LinkedIn for teams ready to work smarter.",
+        bio: "As a full time AI Implementation Engineer at $1B+ digital media company in Ziff Davis, and having implemented AI solutions for both Fortune-500 beauty giant The Estée Lauder Companies and prestigious financial firm Lazard, Shawn is no stranger to understanding what makes AI actually work for businesses. His foundation was built on traditional cloud and full stack engineering and now spans to fully agentic AI systems.\n\nToday, he's all-in on Claude and its integration into business workflows. When he's not building for clients, Shawn shares AI and automation strategies on LinkedIn and YouTube for teams who are ready to work smarter and win the next decade.",
         image: "/bios/shawn.PNG",
         linkedin: "https://www.linkedin.com/in/shawn-weigand/",
         youtube: "https://www.youtube.com/@shawnbuildsai",
@@ -46,20 +46,62 @@ const TEAM = [
     }
 ];
 
-export function Bios() {
+export function Bios({ theme = "light" }: { theme?: "light" | "dark" }) {
+    const isDark = theme === "dark";
+
     return (
-        <section id="team" className="py-24 bg-background border-t border-border/40">
+        <section
+            id="team"
+            className={
+                isDark
+                    ? "py-24 relative overflow-hidden"
+                    : "py-24 bg-background border-t border-border/40"
+            }
+            style={
+                isDark
+                    ? {
+                        backgroundColor: "#262624",
+                        borderTop: "1px solid rgba(240, 238, 230, 0.08)",
+                    }
+                    : undefined
+            }
+        >
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
                 <div className="text-center max-w-2xl mx-auto mb-16">
-                    <h2 className="font-heading text-3xl font-bold sm:text-4xl text-foreground mb-4">
-                        Meet the <span className="text-primary">Experts</span>
+                    <h2
+                        className={
+                            isDark
+                                ? "text-3xl font-bold sm:text-4xl mb-4"
+                                : "font-heading text-3xl font-bold sm:text-4xl text-foreground mb-4"
+                        }
+                        style={
+                            isDark
+                                ? {
+                                    fontFamily: "var(--font-heading), serif",
+                                    color: "#F0EEE6",
+                                }
+                                : undefined
+                        }
+                    >
+                        Meet the <span style={{ color: isDark ? "#D67854" : "var(--color-primary)" }}>Experts</span>
                     </h2>
-                    <p className="text-muted-foreground text-lg">
+                    <p
+                        className={isDark ? "text-lg" : "text-muted-foreground text-lg"}
+                        style={
+                            isDark
+                                ? {
+                                    fontFamily: "var(--font-sans), sans-serif",
+                                    color: "#F0EEE6",
+                                    opacity: 0.75,
+                                }
+                                : undefined
+                        }
+                    >
                         The people behind the automation. We bring years of real-world experience building systems that scale.
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
                     {TEAM.map((person, index) => (
                         <motion.div
                             key={index}
@@ -67,12 +109,29 @@ export function Bios() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-50px" }}
                             transition={{ duration: 0.5, delay: index * 0.2 }}
-                            className="flex flex-col gap-8 p-8 rounded-3xl bg-card border border-border shadow-md hover:shadow-xl transition-shadow"
+                            className={
+                                isDark
+                                    ? "flex flex-col gap-6 p-6 rounded-3xl border shadow-xl"
+                                    : "flex flex-col gap-6 p-6 rounded-3xl bg-card border border-border shadow-md hover:shadow-xl transition-shadow"
+                            }
+                            style={
+                                isDark
+                                    ? {
+                                        backgroundColor: "#2C2C29",
+                                        borderColor: "rgba(240, 238, 230, 0.08)",
+                                    }
+                                    : undefined
+                            }
                         >
-                            <div className="flex flex-col sm:flex-row gap-8 items-center sm:items-start text-center sm:text-left">
+                            <div className="flex flex-col sm:flex-row gap-6 items-center sm:items-start text-center sm:text-left">
                                 <div className="shrink-0">
                                     {person.image ? (
-                                        <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-primary/10">
+                                        <div
+                                            className="w-40 h-40 rounded-full overflow-hidden border-4"
+                                            style={{
+                                                borderColor: isDark ? "rgba(214, 120, 84, 0.15)" : "rgba(91, 63, 255, 0.1)",
+                                            }}
+                                        >
                                             <img
                                                 src={person.image}
                                                 alt={person.name}
@@ -84,24 +143,83 @@ export function Bios() {
                                             />
                                         </div>
                                     ) : (
-                                        <div className="w-48 h-48 rounded-full bg-primary/10 border-4 border-primary/20 flex items-center justify-center">
-                                            <span className="text-5xl font-heading font-bold text-primary/40">{person.name.charAt(0)}</span>
+                                        <div
+                                            className="w-40 h-40 rounded-full border-4 flex items-center justify-center"
+                                            style={{
+                                                backgroundColor: isDark ? "rgba(214, 120, 84, 0.1)" : "rgba(91, 63, 255, 0.1)",
+                                                borderColor: isDark ? "rgba(214, 120, 84, 0.2)" : "rgba(91, 63, 255, 0.2)",
+                                            }}
+                                        >
+                                            <span
+                                                className="text-4xl font-heading font-bold"
+                                                style={{ color: isDark ? "#D67854" : "var(--color-primary)" }}
+                                            >
+                                                {person.name.charAt(0)}
+                                            </span>
                                         </div>
                                     )}
                                 </div>
 
                                 <div className="flex flex-col flex-1 justify-center min-h-[12rem]">
-                                    <h3 className="text-4xl sm:text-4xl font-bold font-heading text-foreground mb-2">{person.name}</h3>
-                                    <p className="text-primary text-xl sm:text-2xl font-medium mb-6">{person.role}</p>
+                                    <h3
+                                        className={
+                                            isDark
+                                                ? "text-4xl font-bold mb-2"
+                                                : "text-4xl sm:text-4xl font-bold font-heading text-foreground mb-2"
+                                        }
+                                        style={
+                                            isDark
+                                                ? {
+                                                    fontFamily: "var(--font-heading), serif",
+                                                    color: "#F0EEE6",
+                                                }
+                                                : undefined
+                                        }
+                                    >
+                                        {person.name}
+                                    </h3>
+                                    <p
+                                        className={
+                                            isDark
+                                                ? "text-xl sm:text-2xl font-medium mb-6"
+                                                : "text-primary text-xl sm:text-2xl font-medium mb-6"
+                                        }
+                                        style={
+                                            isDark
+                                                ? {
+                                                    fontFamily: "var(--font-sans), sans-serif",
+                                                    color: "#D67854",
+                                                }
+                                                : undefined
+                                        }
+                                    >
+                                        {person.role}
+                                    </p>
 
                                     <div className="flex gap-3 justify-center sm:justify-start">
                                         {person.linkedin && (
-                                            <Link href={person.linkedin} target="_blank" className="p-3 bg-muted hover:bg-primary/20 rounded-full transition-colors text-muted-foreground hover:text-primary">
+                                            <Link
+                                                href={person.linkedin}
+                                                target="_blank"
+                                                className={
+                                                    isDark
+                                                        ? "p-3 rounded-full transition-colors bg-[#F0EEE6]/[0.04] text-[#F0EEE6] hover:bg-[#0A66C2]/15 hover:text-[#0A66C2]"
+                                                        : "p-3 bg-muted hover:bg-primary/20 rounded-full transition-colors text-muted-foreground hover:text-primary"
+                                                }
+                                            >
                                                 <Linkedin className="w-6 h-6" />
                                             </Link>
                                         )}
                                         {person.youtube && (
-                                            <Link href={person.youtube} target="_blank" className="p-3 bg-muted hover:bg-red-500/20 rounded-full transition-colors text-muted-foreground hover:text-red-500">
+                                            <Link
+                                                href={person.youtube}
+                                                target="_blank"
+                                                className={
+                                                    isDark
+                                                        ? "p-3 rounded-full transition-colors bg-[#F0EEE6]/[0.04] text-[#F0EEE6] hover:bg-[#FF0000]/15 hover:text-[#FF0000]"
+                                                        : "p-3 bg-muted hover:bg-red-500/20 rounded-full transition-colors text-muted-foreground hover:text-red-500"
+                                                }
+                                            >
                                                 <Youtube className="w-6 h-6" />
                                             </Link>
                                         )}
@@ -110,7 +228,22 @@ export function Bios() {
                             </div>
 
                             <div className="w-full">
-                                <p className="text-muted-foreground text-lg leading-relaxed whitespace-pre-line">
+                                <p
+                                    className={
+                                        isDark
+                                            ? "text-lg leading-relaxed whitespace-pre-line"
+                                            : "text-muted-foreground text-lg leading-relaxed whitespace-pre-line"
+                                    }
+                                    style={
+                                        isDark
+                                            ? {
+                                                fontFamily: "var(--font-sans), sans-serif",
+                                                color: "#F0EEE6",
+                                                opacity: 0.75,
+                                            }
+                                            : undefined
+                                    }
+                                >
                                     {person.bio}
                                 </p>
                             </div>
@@ -118,9 +251,24 @@ export function Bios() {
                     ))}
                 </div>
 
-                {/* Team Specializations */}
+                {/* Team Specializations
                 <div className="mt-20">
-                    <p className="text-center text-muted-foreground text-lg mb-8">
+                    <p
+                        className={
+                            isDark
+                                ? "text-center text-lg mb-8"
+                                : "text-center text-muted-foreground text-lg mb-8"
+                        }
+                        style={
+                            isDark
+                                ? {
+                                    fontFamily: "var(--font-sans), sans-serif",
+                                    color: "#F0EEE6",
+                                    opacity: 0.5,
+                                }
+                                : undefined
+                        }
+                    >
                         We specialize in
                     </p>
                     <motion.div
@@ -128,7 +276,11 @@ export function Bios() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: "-50px" }}
                         transition={{ duration: 0.5, delay: 0.4 }}
-                        className="flex flex-wrap justify-center items-center gap-12 md:gap-24 text-muted-foreground"
+                        className={
+                            isDark
+                                ? "flex flex-wrap justify-center items-center gap-12 md:gap-24 text-[#F0EEE6]/60"
+                                : "flex flex-wrap justify-center items-center gap-12 md:gap-24 text-muted-foreground"
+                        }
                     >
                         {TECHNOLOGIES.map((tech, index) => (
                             <div key={index} className="relative flex flex-col items-center group">
@@ -144,30 +296,69 @@ export function Bios() {
 
                                         {tech.status && (
                                             <div className="flex items-center gap-1.5 grayscale group-hover:grayscale-0 opacity-40 group-hover:opacity-100 transition-all duration-300">
-                                                <BadgeCheck className="w-4 h-4 text-primary" />
-                                                <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-primary">
+                                                <BadgeCheck
+                                                    className="w-4 h-4"
+                                                    style={{ color: isDark ? "#D67854" : "var(--color-primary)" }}
+                                                />
+                                                <span
+                                                    className="text-[10px] sm:text-xs font-bold uppercase tracking-wider"
+                                                    style={{ color: isDark ? "#D67854" : "var(--color-primary)" }}
+                                                >
                                                     {tech.status}
                                                 </span>
                                             </div>
                                         )}
 
-                                        {/* Tooltip */}
-                                        <div className="absolute -top-12 left-1/2 -translate-x-1/2 bg-foreground text-background text-sm font-medium px-4 py-2 rounded-md opacity-0 group-hover:opacity-100 group-hover:-translate-y-1 transition-all duration-300 whitespace-nowrap pointer-events-none shadow-lg z-20">
+                                        <div
+                                            className="absolute -top-12 left-1/2 -translate-x-1/2 text-sm font-medium px-4 py-2 rounded-md opacity-0 group-hover:opacity-100 group-hover:-translate-y-1 transition-all duration-300 whitespace-nowrap pointer-events-none shadow-lg z-20"
+                                            style={
+                                                isDark
+                                                    ? {
+                                                        backgroundColor: "#2C2C29",
+                                                        color: "#F0EEE6",
+                                                        border: "1px solid rgba(240, 238, 230, 0.08)",
+                                                    }
+                                                    : {
+                                                        backgroundColor: "var(--color-foreground)",
+                                                        color: "var(--color-background)",
+                                                    }
+                                            }
+                                        >
                                             {tech.name}
-                                            {/* Tooltip Arrow */}
-                                            <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-foreground rotate-45"></div>
+                                            <div
+                                                className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 rotate-45"
+                                                style={
+                                                    isDark
+                                                        ? {
+                                                            backgroundColor: "#2C2C29",
+                                                            borderRight: "1px solid rgba(240, 238, 230, 0.08)",
+                                                            borderBottom: "1px solid rgba(240, 238, 230, 0.08)",
+                                                        }
+                                                        : {
+                                                            backgroundColor: "var(--color-foreground)",
+                                                        }
+                                                }
+                                            />
                                         </div>
                                     </>
                                 ) : (
                                     <div className="flex flex-col items-center gap-1">
                                         <span className="font-heading font-semibold tracking-wide uppercase text-sm">{tech.name}</span>
-                                        {tech.status && <span className="text-[10px] text-primary font-bold uppercase">{tech.status}</span>}
+                                        {tech.status && (
+                                            <span
+                                                className="text-[10px] font-bold uppercase"
+                                                style={{ color: isDark ? "#D67854" : "var(--color-primary)" }}
+                                            >
+                                                {tech.status}
+                                            </span>
+                                        )}
                                     </div>
                                 )}
                             </div>
                         ))}
                     </motion.div>
                 </div>
+                */}
             </div>
         </section>
     );
