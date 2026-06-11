@@ -16,13 +16,13 @@ const playfairDisplay = Playfair_Display({
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_APP_URL || 
+    process.env.NEXT_PUBLIC_APP_URL ||
     (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : 'http://localhost:3000')
   ),
-  title: "AutoMates | Done-For-You Outreach & Guaranteed Meetings",
+  title: "AutoMates | Done-For-You Outreach",
   description: "We run your entire outreach so you can focus on delivering, not filling the pipeline. Guaranteed booked sales calls on your calendar.",
   openGraph: {
-    title: "AutoMates | Done-For-You Outreach & Guaranteed Meetings",
+    title: "AutoMates | Done-For-You Outreach",
     description: "We run your entire outreach so you can focus on delivering, not filling the pipeline. Guaranteed booked sales calls on your calendar.",
     images: [
       {
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AutoMates | Done-For-You Outreach & Guaranteed Meetings",
+    title: "AutoMates | Done-For-You",
     description: "We run your entire outreach so you can focus on delivering, not filling the pipeline. Guaranteed booked sales calls on your calendar.",
     images: ["/icon.png"],
   },
