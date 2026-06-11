@@ -9,24 +9,24 @@ import {
 
 const FAQS = [
     {
-        question: "How does integrating Claude help my business?",
-        answer: "Claude acts as an intelligent reasoning layer inside your existing workflows. Instead of simply syncing data, Claude can analyze complex client intake forms, generate tailored proposals, synthesize research, draft workbooks, and automate administrative tasks with human-like quality.",
+        question: "How do you guarantee booked meetings?",
+        answer: "We design and run highly targeted outreach campaigns. If we do not deliver the agreed number of qualified sales calls on your calendar within the 8-week period, you get a full refund of your money or we work until we do - no questions asked.",
     },
     {
-        question: "Which AI models do you typically implement?",
-        answer: "We build exclusively within the Anthropic Claude model family—specifically Haiku, Sonnet, and Opus. By specializing in Anthropic's ecosystem, we design highly optimized, cost-efficient systems: utilizing Haiku for fast, high-volume tasks; Sonnet for robust daily operations and intermediate reasoning; and Opus for highly complex, multi-step analytical processes.",
+        question: "What counts as a qualified meeting?",
+        answer: "We define qualification criteria together before launching your campaigns. A qualified meeting is a booked call with a decision-maker who fits your Ideal Customer Persona (ICP) and has confirmed their interest in learning more about your services.",
     },
     {
-        question: "Do we need to migrate our databases or tools to use AI?",
-        answer: "Not at all. We connect AI directly to the software you already use—whether that's Slack, Notion, your CRM, email, or internal databases. The goal is zero friction: your team gets the power of custom AI without having to learn a brand-new platform.",
+        question: "Do I need to write the outreach copy or buy target lists?",
+        answer: "No, we handle everything. Our service is completely Done For You, including ideal customer persona discovery, copywriting, custom list building, inbox management, response handling, and campaign optimization.",
     },
     {
-        question: "How do you ensure the AI outputs are accurate and reliable?",
-        answer: "We design every integration with strict guardrails, advanced prompt engineering, and structured validation layers. Before any system goes live, we run it through comprehensive edge-case testing to prevent hallucinations and guarantee consistent, high-quality output.",
+        question: "How do you protect my main domain and email reputation?",
+        answer: "We never send cold outreach from your primary business domain. Instead, we purchase and set up specialized sender domains, warm them up using advanced warm-up protocols, and monitor deliverability to ensure your primary email remains fully protected.",
     },
     {
-        question: "What does the handover and training process look like?",
-        answer: "We train your team for frictionless adoption so they can run with the new systems confidently from day one. We hand over 100% ownership, source code, and complete documentation, ensuring your team is fully empowered to maintain, operate, and scale your AI workflows independently.",
+        question: "How long does it take to launch and see results?",
+        answer: "Our setup and onboarding process takes about 2 weeks. This includes domain setup, warm-up, persona research, list building, and copywriting. Once launched, most campaigns start booking calls within the first 7 to 10 days.",
     },
 ];
 
@@ -44,9 +44,9 @@ export function Faq({ theme = "light" }: { theme?: "light" | "dark" }) {
             style={
                 isDark
                     ? {
-                          backgroundColor: "#262624",
-                          borderTop: "1px solid rgba(240, 238, 230, 0.08)",
-                      }
+                        backgroundColor: "#FAF9F5",
+                        borderTop: "1px solid rgba(38, 38, 36, 0.08)",
+                    }
                     : undefined
             }
         >
@@ -57,9 +57,9 @@ export function Faq({ theme = "light" }: { theme?: "light" | "dark" }) {
                         style={
                             isDark
                                 ? {
-                                      fontFamily: "var(--font-heading), serif",
-                                      color: "#F0EEE6",
-                                  }
+                                    fontFamily: "var(--font-heading), serif",
+                                    color: "#262624",
+                                }
                                 : undefined
                         }
                     >
@@ -70,10 +70,10 @@ export function Faq({ theme = "light" }: { theme?: "light" | "dark" }) {
                         style={
                             isDark
                                 ? {
-                                      fontFamily: "var(--font-sans), sans-serif",
-                                      color: "#F0EEE6",
-                                      opacity: 0.75,
-                                  }
+                                    fontFamily: "var(--font-sans), sans-serif",
+                                    color: "#262624",
+                                    opacity: 0.75,
+                                }
                                 : undefined
                         }
                     >
@@ -88,30 +88,30 @@ export function Faq({ theme = "light" }: { theme?: "light" | "dark" }) {
                             value={`item-${index}`}
                             className={
                                 isDark
-                                    ? "rounded-2xl px-6 transition-all overflow-hidden border hover:border-[#D67854]/40 hover:-translate-y-0.5 duration-300 shadow-lg"
+                                    ? "rounded-2xl px-6 transition-all overflow-hidden border hover:border-[#137EFF]/40 hover:-translate-y-0.5 duration-300 shadow-lg"
                                     : "bg-card shadow-lg hover:shadow-xl border border-border hover:border-primary/40 rounded-2xl px-6 transition-all overflow-hidden"
                             }
                             style={
                                 isDark
                                     ? {
-                                          backgroundColor: "#2C2C29",
-                                          borderColor: "rgba(240, 238, 230, 0.08)",
-                                      }
+                                        backgroundColor: "#FFFFFF",
+                                        borderColor: "rgba(38, 38, 36, 0.08)",
+                                    }
                                     : undefined
                             }
                         >
                             <AccordionTrigger
                                 className={
                                     isDark
-                                        ? "text-left font-medium text-lg transition-colors hover:no-underline hover:text-[#D67854]"
+                                        ? "text-left font-medium text-lg transition-colors hover:no-underline hover:text-[#137EFF]"
                                         : "text-left font-medium text-lg text-foreground hover:text-primary transition-colors hover:no-underline"
                                 }
                                 style={
                                     isDark
                                         ? {
-                                              fontFamily: "var(--font-sans), sans-serif",
-                                              color: "#F0EEE6",
-                                          }
+                                            fontFamily: "var(--font-sans), sans-serif",
+                                            color: "#262624",
+                                        }
                                         : undefined
                                 }
                             >
@@ -126,10 +126,10 @@ export function Faq({ theme = "light" }: { theme?: "light" | "dark" }) {
                                 style={
                                     isDark
                                         ? {
-                                              fontFamily: "var(--font-sans), sans-serif",
-                                              color: "#F0EEE6",
-                                              opacity: 0.75,
-                                          }
+                                            fontFamily: "var(--font-sans), sans-serif",
+                                            color: "#262624",
+                                            opacity: 0.75,
+                                        }
                                         : undefined
                                 }
                             >

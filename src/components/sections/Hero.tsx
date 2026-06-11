@@ -61,7 +61,7 @@ export function Hero() {
                     >
                         <Link href="#contact" className="inline-flex h-14 px-8 rounded-full items-center justify-center text-base bg-primary text-primary-foreground hover:bg-primary/90 w-full sm:w-auto group font-medium transition-colors">
                             <Calendar className="mr-2 h-5 w-5" />
-                            Discover your strategy
+                            Find out how
                             <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                         </Link>
                     </motion.div>

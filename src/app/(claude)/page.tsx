@@ -10,49 +10,52 @@ import { Testimonials } from "@/components/sections/Testimonials";
 import { Bios } from "@/components/sections/Bios";
 import { Faq } from "@/components/sections/Faq";
 import { Footer } from "@/components/layout/Footer";
-import { CheckCircle2, Search, Link as LinkIcon, Cpu, Handshake } from "lucide-react";
+import { CheckCircle2, Search, MessageSquare, Send, Calendar } from "lucide-react";
 
-const ROTATING_TEXTS = ["Online Coaches", "Agencies", "Consultants"];
+const ROTATING_TEXTS = ["chasing referrals", "unpredictable revenue", "empty pipelines"];
 
 const CLAUDE_SERVICES = [
   {
-    title: "Online Coaches",
+    title: "Done For You",
     description:
-      "Scale your coaching program without operational headache. We automate your backend logistics, client materials, marketing assets, and founder schedule so you can focus entirely on high-impact transformation.",
+      "We discover your ideal prospects and build the entire outreach from scratch. You never touch a list, write an email, or follow up - we handle all of it.",
     solutions: [
-      "Client-facing deliverables (training decks, worksheets, workbooks)",
-      "Internal and client reporting (weekly/monthly/quarterly insights, survey analysis)",
-      "Founder support (calendar, email, travel coordination)",
-      "Sales and client experience workflows (session prep, tracking, reminders)",
-      "Content scheduling support (articles, weekly newsletters, website blogs)",
+      "Custom copywriting for your offer",
+      "List building of the most qualified leads",
+      "Discover your ideal customer persona",
+      "Daily inbox management",
+      "Response handling for positive replies",
+      "Follow up sequences to prospects",
+      "Dedicated account manager",
     ],
     accentColor: "text-violet-400",
     imageSrc: "/coaches.webp",
   },
   {
-    title: "Agencies",
+    title: "Guaranteed Meetings",
     description:
-      "Keep client projects moving swiftly and profitably. We build automated systems to handle new client onboarding, team task routing, campaign reporting, and final asset delivery with zero friction.",
+      "We don't just send emails - we guarantee booked sales calls on your calendar. If we don't deliver, you get your money back.",
     solutions: [
-      "Client onboarding & asset gathering (questionnaires, brand kits, portal setup)",
-      "Project management & task routing (ticket creation, status updates, team notifications)",
-      "Client-facing reporting (campaign dashboards, ROI analytics, monthly reviews)",
-      "Resource & capacity management (time logs, project scheduling, team allocation)",
-      "Fulfillment & QA workflows (file structure organization, asset exports, handoff checklists)",
+      "Pre-qualified leads only",
+      "Sales calls booked on your calendar",
+      "Target audience profile filtering",
+      "Personalized prospect research reports",
+      "100% risk-free guarantee"
     ],
     accentColor: "text-emerald-400",
     imageSrc: "/agencies.png",
   },
   {
-    title: "Consultants",
+    title: "Predictable Pipeline",
     description:
-      "Turn your specialized expertise into a highly scalable practice. We automate your custom research gathering, client-ready proposals, diagnostics, and ongoing retainer management.",
+      "No more feast-or-famine revenue cycles. Our 8-week campaigns build a consistent, predictable stream of new business opportunities.",
     solutions: [
-      "Diagnostic audits & intake forms (prospect assessments, scoring models, next-step advice)",
-      "Research & data synthesis (market briefs, industry roundups, competitor analysis)",
-      "Proposal & contract execution (personalized scopes of work, e-signatures, invoicing)",
-      "Client engagement & retainer management (regular progress reports, feedback loops, renewal alerts)",
-      "Founder & administrative support (itinerary planning, expense tracking, calendar management)",
+      "8-week structured outreach sprint",
+      "Lead list data enrichment & cleansing",
+      "Domain setup & warm-up",
+      "Maximized deliverability",
+      "Continuous copy optimization",
+      "Weekly campaign reporting"
     ],
     accentColor: "text-orange-400",
     imageSrc: "/consultants.png",
@@ -62,35 +65,35 @@ const CLAUDE_SERVICES = [
 const PROCESS_STEPS = [
   {
     number: "01",
-    title: "Discover",
-    subtitle: "Find exactly where you're losing time and money.",
+    title: "Profile",
+    subtitle: "Identify your ideal target audience.",
     description:
-      "We go deep with you on a full operational audit to map out every pillar of your business, understand each of the workflows, and identify exactly where the bottlenecks exist.",
+      "We discover your exact buyers, compile high-accuracy prospect data, and thoroughly cleanse target lists to protect your sender reputation.",
     icon: Search,
   },
   {
     number: "02",
-    title: "Integrate",
-    subtitle: "Connect Claude directly to your existing tools and workflows.",
+    title: "Craft",
+    subtitle: "Write highly personalized outreach sequences.",
     description:
-      "With a clear picture of your operations, we integrate Claude into every system that you work with - priming your business for AI-native optimization.",
-    icon: LinkIcon,
+      "We draft custom copywriting sequences tailored to spark positive conversations and drive interest, rather than fill spam folders.",
+    icon: MessageSquare,
   },
   {
     number: "03",
-    title: "Automate",
-    subtitle: "Replace repetitive manual work with custom AI systems.",
+    title: "Launch",
+    subtitle: "Deploy custom domains and launch campaigns.",
     description:
-      "We build bespoke AI plugins and intelligent agents tailored to your business, converting manual bottlenecks into seamless, instant executions that run with precision.",
-    icon: Cpu,
+      "We build and warm up specialized sender domains, launching your campaigns safely utilizing advanced deliverability checks.",
+    icon: Send,
   },
   {
     number: "04",
-    title: "Handover",
-    subtitle: "Empower your team and continuously optimize performance.",
+    title: "Book",
+    subtitle: "Handle replies and route warm sales calls.",
     description:
-      "We train your team for frictionless adoption with customized SOPs to ensure your AI systems grow alongside your business.",
-    icon: Handshake,
+      "We manage all replies, answer objections, and follow up relentlessly, booking qualified meetings directly on your calendar.",
+    icon: Calendar,
   },
 ];
 
@@ -129,11 +132,11 @@ export default function ClaudeLanding() {
           border-bottom: none !important;
           font-family: var(--font-sans), sans-serif !important; /* Entire Navbar uses Inter secondary font */
         }
-        /* Color all general links, logo, and menu to warm white */
+        /* Color all general links, logo, and menu to dark charcoal */
         .no-nav-border header a:not([href="#contact"]), 
         .no-nav-border header span,
         .no-nav-border header svg {
-          color: #F0EEE6 !important;
+          color: #262624 !important;
         }
         /* Keep AutoMates branding in Playfair Display primary font */
         .no-nav-border header span.font-heading,
@@ -146,29 +149,32 @@ export default function ClaudeLanding() {
         }
         /* Style 'Book a Call' button to match 'Discover Your Strategy' CTA */
         .no-nav-border header a[href="#contact"] {
-          background-color: #D87756 !important;
+          background-color: #137EFF !important;
           color: #F0EEE6 !important;
           border-radius: 1rem !important; /* rounded-2xl (16px) */
           font-family: var(--font-sans), sans-serif !important;
-          box-shadow: 0 10px 15px -3px rgba(216, 119, 86, 0.15) !important;
+          box-shadow: 0 10px 15px -3px rgba(19, 126, 255, 0.15) !important;
           transition: all 0.3s ease !important;
           padding-left: 1.5rem !important;
           padding-right: 1.5rem !important;
         }
+        .no-nav-border header a[href="#contact"] svg {
+          color: #F0EEE6 !important;
+        }
         .no-nav-border header a[href="#contact"]:hover {
-          background-color: rgba(216, 119, 86, 0.9) !important;
+          background-color: rgba(19, 126, 255, 0.9) !important;
           transform: scale(1.02) !important;
         }
       `}</style>
 
       <div
-        className="w-full min-h-screen flex flex-col selection:bg-white/10 selection:text-white no-nav-border"
-        style={{ backgroundColor: "#262624" }}
+        className="w-full min-h-screen flex flex-col selection:bg-black/10 selection:text-black no-nav-border"
+        style={{ backgroundColor: "#FAF9F5" }}
       >
         {/* Sticky Top Navbar Wrapper */}
         <div
           className="sticky top-0 z-50 w-full"
-          style={{ "--background": "#262624" } as React.CSSProperties}
+          style={{ "--background": "#FAF9F5" } as React.CSSProperties}
         >
           <Navbar />
         </div>
@@ -176,24 +182,19 @@ export default function ClaudeLanding() {
         {/* Hero Section - Centered and occupying remaining viewport space with extra top padding */}
         <main className="flex flex-1 flex-col items-center justify-center gap-8 p-6 pt-36 text-center">
           {/* Main Brand Header */}
-          <div className="flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
-            <Image
-              src="/tools/claude.png"
-              alt="Claude"
-              width={72}
-              height={72}
-              className="object-contain"
-              priority
-            />
+          <div className="flex justify-center text-center">
             <h1
-              className="flex flex-wrap items-center justify-center md:justify-start gap-x-4 gap-y-3 text-5xl sm:text-6xl font-medium tracking-wide"
+              className="text-5xl sm:text-6xl font-medium tracking-wide text-center leading-tight"
               style={{ fontFamily: "var(--font-heading), serif" }}
             >
-              <span style={{ color: "#F0EEE6" }}>Claude</span>
-              <span className="text-3xl sm:text-4xl italic" style={{ color: "#F0EEE6", opacity: 0.8 }}>for</span>
+              <span style={{ color: "#262624" }}>Tired </span>
+              <span className="text-3xl sm:text-4xl italic" style={{ color: "#262624", opacity: 0.8 }}>of </span>
 
               {/* Animated Rotating Segment with padding and negative margin to prevent descender clipping */}
-              <span className="inline-flex justify-center md:justify-start min-w-[280px] sm:min-w-[380px] overflow-hidden py-3 -my-3">
+              <span
+                className="inline-flex justify-center overflow-hidden py-3 -my-3"
+                style={{ verticalAlign: "-0.05em" }}
+              >
                 <AnimatePresence mode="wait">
                   <motion.span
                     key={ROTATING_TEXTS[index]}
@@ -202,7 +203,7 @@ export default function ClaudeLanding() {
                     exit={{ y: -24, opacity: 0 }}
                     transition={{ duration: 0.45, ease: [0.4, 0, 0.2, 1] }}
                     className="inline-block"
-                    style={{ color: "#D67854" }}
+                    style={{ color: "#137EFF" }}
                   >
                     {ROTATING_TEXTS[index]}
                   </motion.span>
@@ -216,38 +217,35 @@ export default function ClaudeLanding() {
             className="text-base sm:text-lg leading-relaxed max-w-2xl mx-auto"
             style={{
               fontFamily: "var(--font-sans), sans-serif",
-              color: "#F0EEE6",
+              color: "#262624",
               opacity: 0.75
             }}
           >
-            AI is here to stay, and the teams using it the right way are the ones who will <span className="italic">win the next decade</span>.
-            {/* <span className="block mt-3">
-              AutoMates is a team of Claude AI experts that helps businesses implement and see <span className="italic">actual value</span> out of these new AI tools.
-            </span> */}
+            We guarantee booked sales calls for your business - <span className="italic">or your money back</span>.
           </p>
 
           {/* Discover Your Strategy CTA Button */}
           <div className="flex justify-center mt-2">
             <Link
               href="#contact"
-              className="px-8 py-4 text-lg font-semibold text-[#F0EEE6] shadow-lg shadow-[#D87756]/10 transition-all duration-300 hover:scale-[1.02] hover:bg-[#D87756]/90 rounded-2xl cursor-pointer"
+              className="px-8 py-4 text-lg font-semibold text-[#F0EEE6] shadow-lg shadow-[#137EFF]/10 transition-all duration-300 hover:scale-[1.02] hover:bg-[#137EFF]/90 rounded-2xl cursor-pointer"
               style={{
-                backgroundColor: "#D87756",
+                backgroundColor: "#137EFF",
                 fontFamily: "var(--font-sans), sans-serif"
               }}
             >
-              Discover Your Strategy
+              Find out how
             </Link>
           </div>
         </main>
 
         {/* Trusted By Section - Shifted up, client logos colored #9C9A92, title removed */}
-        <div className="trusted-themed mb-12" style={{ "--background": "#262624" } as React.CSSProperties}>
+        <div className="trusted-themed mb-12" style={{ "--background": "#FAF9F5" } as React.CSSProperties}>
           <TrustedBy showTitle={false} />
         </div>
 
         {/* How We Help Section */}
-        <section id="how-we-help" className="py-24 relative overflow-hidden w-full" style={{ borderTop: "1px solid rgba(240, 238, 230, 0.08)" }}>
+        <section id="how-we-help" className="py-24 relative overflow-hidden w-full" style={{ borderTop: "1px solid rgba(38, 38, 36, 0.08)" }}>
 
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
             {/* Header */}
@@ -262,21 +260,21 @@ export default function ClaudeLanding() {
                 className="text-3xl font-bold sm:text-4xl mb-6"
                 style={{
                   fontFamily: "var(--font-heading), serif",
-                  color: "#F0EEE6"
+                  color: "#262624"
                 }}
               >
                 Spend your time on{" "}
-                <span style={{ color: "#D67854" }}>what actually matters</span>
+                <span style={{ color: "#137EFF" }}>what actually matters</span>
               </h2>
               <p
                 className="text-lg max-w-xl mx-auto text-balance"
                 style={{
                   fontFamily: "var(--font-sans), sans-serif",
-                  color: "#F0EEE6",
+                  color: "#262624",
                   opacity: 0.75
                 }}
               >
-                We remove the operational burden so you can focus on the things that move the needle.
+                We run your entire outreach so you can focus on delivering, not filling the pipeline.
               </p>
             </motion.div>
 
@@ -294,7 +292,7 @@ export default function ClaudeLanding() {
           id="our-process"
           ref={processSectionRef}
           className="py-24 relative overflow-hidden w-full"
-          style={{ borderTop: "1px solid rgba(240, 238, 230, 0.08)" }}
+          style={{ borderTop: "1px solid rgba(38, 38, 36, 0.08)" }}
         >
 
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl relative z-10">
@@ -309,20 +307,20 @@ export default function ClaudeLanding() {
                 className="text-3xl font-bold sm:text-4xl mb-6"
                 style={{
                   fontFamily: "var(--font-heading), serif",
-                  color: "#F0EEE6",
+                  color: "#262624",
                 }}
               >
-                How you go from <span style={{ color: "#D67854" }}>zero → AI-native</span>
+                How we build your <span style={{ color: "#137EFF" }}>pipeline</span>
               </h2>
               <p
                 className="text-lg max-w-xl mx-auto text-balance"
                 style={{
                   fontFamily: "var(--font-sans), sans-serif",
-                  color: "#F0EEE6",
+                  color: "#262624",
                   opacity: 0.75
                 }}
               >
-                Our step-by-step roadmap to build the systems you need to <span className="italic">win the next decade</span>.
+                Our step-by-step roadmap to launch your campaigns and start booking sales calls.
               </p>
             </motion.div>
 
@@ -331,7 +329,7 @@ export default function ClaudeLanding() {
               {/* Track Line */}
               <div
                 className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px -translate-x-px"
-                style={{ backgroundColor: "rgba(240, 238, 230, 0.08)" }}
+                style={{ backgroundColor: "rgba(38, 38, 36, 0.08)" }}
               />
 
               {/* Animated Line Fill */}
@@ -339,7 +337,7 @@ export default function ClaudeLanding() {
                 className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px -translate-x-px origin-top"
                 style={{
                   scaleY: lineScaleY,
-                  backgroundColor: "#D67854",
+                  backgroundColor: "#137EFF",
                 }}
               />
 
@@ -348,8 +346,8 @@ export default function ClaudeLanding() {
                 className="absolute left-4 md:left-1/2 -translate-x-1/2 z-30 w-6 h-6 rounded-full border-2 shadow-[0_0_20px_rgba(214,120,84,0.6)]"
                 style={{
                   top: pointerY,
-                  backgroundColor: "#D67854",
-                  borderColor: "#262624",
+                  backgroundColor: "#137EFF",
+                  borderColor: "#FAF9F5",
                 }}
               />
 
@@ -443,16 +441,16 @@ function ClaudeFlipCard({
           style={{
             backfaceVisibility: "hidden",
             WebkitBackfaceVisibility: "hidden",
-            backgroundColor: "#2C2C29",
-            borderColor: "rgba(240, 238, 230, 0.08)",
+            backgroundColor: "#FFFFFF",
+            borderColor: "rgba(38, 38, 36, 0.08)",
           }}
         >
-          {/* Top Half: Centered Rounded Square in color #30302E, same width as text */}
+          {/* Top Half: Centered Rounded Square in color #FAF9F5, same width as text */}
           <div
             className="w-full aspect-square rounded-2xl border shrink-0 mx-auto overflow-hidden relative"
             style={{
-              backgroundColor: "#30302E",
-              borderColor: "rgba(240, 238, 230, 0.05)",
+              backgroundColor: "#FAF9F5",
+              borderColor: "rgba(38, 38, 36, 0.05)",
             }}
           >
             {service.imageSrc && (
@@ -472,7 +470,7 @@ function ClaudeFlipCard({
                 className="text-lg font-bold text-left mb-2.5"
                 style={{
                   fontFamily: "var(--font-heading), serif",
-                  color: "#F0EEE6",
+                  color: "#262624",
                 }}
               >
                 {service.title}
@@ -481,7 +479,7 @@ function ClaudeFlipCard({
                 className="text-sm leading-relaxed text-left"
                 style={{
                   fontFamily: "var(--font-sans), sans-serif",
-                  color: "#F0EEE6",
+                  color: "#262624",
                   opacity: 0.75,
                 }}
               >
@@ -493,7 +491,7 @@ function ClaudeFlipCard({
               className="text-xs text-left italic mt-4"
               style={{
                 fontFamily: "var(--font-sans), sans-serif",
-                color: "#F0EEE6",
+                color: "#262624",
                 opacity: 0.4,
               }}
             >
@@ -510,8 +508,8 @@ function ClaudeFlipCard({
             backfaceVisibility: "hidden",
             WebkitBackfaceVisibility: "hidden",
             transform: "rotateY(180deg)",
-            backgroundColor: "#2C2C29",
-            borderColor: "rgba(240, 238, 230, 0.08)",
+            backgroundColor: "#FFFFFF",
+            borderColor: "rgba(38, 38, 36, 0.08)",
           }}
         >
           <div className="w-full">
@@ -519,7 +517,7 @@ function ClaudeFlipCard({
               className="text-lg font-bold text-left mb-2"
               style={{
                 fontFamily: "var(--font-heading), serif",
-                color: "#F0EEE6",
+                color: "#262624",
               }}
             >
               {service.title}
@@ -528,7 +526,7 @@ function ClaudeFlipCard({
               className="text-xs font-semibold uppercase tracking-wider mb-6"
               style={{
                 fontFamily: "var(--font-sans), sans-serif",
-                color: "#D67854",
+                color: "#137EFF",
               }}
             >
               Deliverables &amp; Solutions
@@ -542,7 +540,7 @@ function ClaudeFlipCard({
                     className="text-sm font-medium text-left leading-normal"
                     style={{
                       fontFamily: "var(--font-sans), sans-serif",
-                      color: "#F0EEE6",
+                      color: "#262624",
                       opacity: 0.85,
                     }}
                   >
@@ -557,7 +555,7 @@ function ClaudeFlipCard({
             className="text-xs italic mt-4"
             style={{
               fontFamily: "var(--font-sans), sans-serif",
-              color: "#F0EEE6",
+              color: "#262624",
               opacity: 0.4,
             }}
           >
@@ -580,25 +578,25 @@ function ProcessStepCard({
     <div
       className="group rounded-2xl p-6 border transition-all duration-300 hover:-translate-y-1 shadow-lg hover:shadow-xl w-full text-left"
       style={{
-        backgroundColor: "#2C2C29",
-        borderColor: "rgba(240, 238, 230, 0.08)",
+        backgroundColor: "#FFFFFF",
+        borderColor: "rgba(38, 38, 36, 0.08)",
       }}
     >
       <div className="flex items-center gap-3 mb-4">
         <div
           className="h-9 w-9 rounded-xl flex items-center justify-center border transition-colors"
           style={{
-            backgroundColor: "rgba(214, 120, 84, 0.1)",
-            borderColor: "rgba(214, 120, 84, 0.2)",
+            backgroundColor: "rgba(19, 126, 255, 0.1)",
+            borderColor: "rgba(19, 126, 255, 0.2)",
           }}
         >
-          <Icon className="h-4 w-4" style={{ color: "#D67854" }} />
+          <Icon className="h-4 w-4" style={{ color: "#137EFF" }} />
         </div>
         <span
           className="text-xs font-bold tracking-[0.2em] uppercase"
           style={{
             fontFamily: "var(--font-sans), sans-serif",
-            color: "#D67854",
+            color: "#137EFF",
           }}
         >
           {step.number}
@@ -608,7 +606,7 @@ function ProcessStepCard({
         className="text-xl font-bold mb-1"
         style={{
           fontFamily: "var(--font-heading), serif",
-          color: "#F0EEE6",
+          color: "#262624",
         }}
       >
         {step.title}
@@ -617,7 +615,7 @@ function ProcessStepCard({
         className="text-xs font-medium mb-3"
         style={{
           fontFamily: "var(--font-sans), sans-serif",
-          color: "#F0EEE6",
+          color: "#262624",
           opacity: 0.6,
         }}
       >
@@ -627,7 +625,7 @@ function ProcessStepCard({
         className="text-sm leading-relaxed"
         style={{
           fontFamily: "var(--font-sans), sans-serif",
-          color: "#F0EEE6",
+          color: "#262624",
           opacity: 0.75,
         }}
       >
