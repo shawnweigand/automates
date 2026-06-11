@@ -56,7 +56,7 @@ export default function CaseStudiesPage() {
                             </h1>
                             <p className="text-muted-foreground text-xl leading-relaxed">
                                 We don't just build technology; we deliver results that move the needle.
-                                Explore how we've helped SMBs transform their operations through strategic AI implementation.
+                                Explore how we've helped SMBs scale their sales pipelines through outbound automation and guaranteed meeting delivery.
                             </p>
                         </motion.div>
                     </div>

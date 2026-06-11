@@ -15,8 +15,30 @@ const playfairDisplay = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "AutoMates | AI Transformation Partners",
-  description: "Identify, implement, and manage AI-driven efficiencies in your business.",
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_APP_URL ||
+    (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : 'http://localhost:3000')
+  ),
+  title: "AutoMates | Done-For-You Outreach",
+  description: "We run your entire outreach so you can focus on delivering, not filling the pipeline. Guaranteed booked sales calls on your calendar.",
+  openGraph: {
+    title: "AutoMates | Done-For-You Outreach",
+    description: "We run your entire outreach so you can focus on delivering, not filling the pipeline. Guaranteed booked sales calls on your calendar.",
+    images: [
+      {
+        url: "/icon.png",
+        width: 512,
+        height: 512,
+        alt: "AutoMates Logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AutoMates | Done-For-You",
+    description: "We run your entire outreach so you can focus on delivering, not filling the pipeline. Guaranteed booked sales calls on your calendar.",
+    images: ["/icon.png"],
+  },
 };
 
 export default function RootLayout({
