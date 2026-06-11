@@ -20,8 +20,8 @@ export function Footer({ theme = "light" }: { theme?: "light" | "dark" }) {
             style={
                 isDark
                     ? {
-                          backgroundColor: "#262624",
-                          borderTop: "1px solid rgba(240, 238, 230, 0.08)",
+                          backgroundColor: "#FAF9F5",
+                          borderTop: "1px solid rgba(38, 38, 36, 0.08)",
                       }
                     : undefined
             }
@@ -37,13 +37,13 @@ export function Footer({ theme = "light" }: { theme?: "light" | "dark" }) {
                         isDark
                             ? {
                                   fontFamily: "var(--font-heading), serif",
-                                  color: "#F0EEE6",
+                                  color: "#262624",
                               }
                             : undefined
                     }
                 >
                     Ready to use{" "}
-                    <span style={{ color: isDark ? "#D67854" : "var(--color-primary)" }}>
+                    <span style={{ color: isDark ? "#137EFF" : "var(--color-primary)" }}>
                         AI the right way?
                     </span>
                 </h2>
@@ -57,7 +57,7 @@ export function Footer({ theme = "light" }: { theme?: "light" | "dark" }) {
                         isDark
                             ? {
                                   fontFamily: "var(--font-sans), sans-serif",
-                                  color: "#F0EEE6",
+                                  color: "#262624",
                                   opacity: 0.75,
                               }
                             : undefined
@@ -69,14 +69,14 @@ export function Footer({ theme = "light" }: { theme?: "light" | "dark" }) {
                 {/* Calendly integration */}
                 <div className="w-full max-w-4xl mx-auto bg-transparent rounded-2xl overflow-hidden mb-24">
                     <InlineWidget
-                        url="https://calendly.com/d/ct2w-7p3-3sg/claude-discovery-call"
+                        url="https://calendly.com/d/dvnd-866-fjb/discovery-call"
                         styles={{ height: "700px", width: "100%" }}
                         pageSettings={{
-                            backgroundColor: "0a0a0a",
+                            backgroundColor: isDark ? "FAF9F5" : "ffffff",
                             hideEventTypeDetails: false,
                             hideLandingPageDetails: false,
-                            primaryColor: isDark ? "d67854" : "5b3fff",
-                            textColor: "ffffff",
+                            primaryColor: isDark ? "137eff" : "5b3fff",
+                            textColor: isDark ? "262624" : "000000",
                         }}
                     />
                 </div>
@@ -100,7 +100,7 @@ export function Footer({ theme = "light" }: { theme?: "light" | "dark" }) {
                                 isDark
                                     ? {
                                           fontFamily: "var(--font-heading), serif",
-                                          color: "#F0EEE6",
+                                          color: "#262624",
                                       }
                                     : undefined
                             }
@@ -117,7 +117,7 @@ export function Footer({ theme = "light" }: { theme?: "light" | "dark" }) {
                             isDark
                                 ? {
                                       fontFamily: "var(--font-sans), sans-serif",
-                                      color: "#F0EEE6",
+                                      color: "#262624",
                                       opacity: 0.4,
                                   }
                                 : undefined

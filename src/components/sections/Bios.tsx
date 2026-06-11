@@ -24,7 +24,7 @@ const TEAM = [
     {
         name: "Shawn Weigand",
         role: "Co-Founder",
-        bio: "As a full time AI Implementation Engineer at $1B+ digital media company in Ziff Davis, and having implemented AI solutions for both Fortune-500 beauty giant The Estée Lauder Companies and prestigious financial firm Lazard, Shawn is no stranger to understanding what makes AI actually work for businesses. His foundation was built on traditional cloud and full stack engineering and now spans to fully agentic AI systems.\n\nToday, he's all-in on Claude and its integration into business workflows. When he's not building for clients, Shawn shares AI and automation strategies on LinkedIn and YouTube for teams who are ready to work smarter and win the next decade.",
+        bio: "As an AI Engineer at a $1B+ digital media company and having implemented AI solutions for both Fortune-500 beauty giant The Estée Lauder Companies and prestigious financial firm Lazard, Shawn is no stranger to understanding what makes AI and automation actually work for businesses. His foundation was built on traditional engineering and now spans to fully agentic AI systems.\n\nToday, he's all-in on AI and its integration into business workflows. When he's not building for clients, Shawn shares AI and automation strategies on LinkedIn and YouTube for teams who are ready to work smarter and win the next decade.",
         image: "/bios/shawn.PNG",
         linkedin: "https://www.linkedin.com/in/shawn-weigand/",
         youtube: "https://www.youtube.com/@shawnbuildsai",
@@ -60,8 +60,8 @@ export function Bios({ theme = "light" }: { theme?: "light" | "dark" }) {
             style={
                 isDark
                     ? {
-                        backgroundColor: "#262624",
-                        borderTop: "1px solid rgba(240, 238, 230, 0.08)",
+                        backgroundColor: "#FAF9F5",
+                        borderTop: "1px solid rgba(38, 38, 36, 0.08)",
                     }
                     : undefined
             }
@@ -78,12 +78,12 @@ export function Bios({ theme = "light" }: { theme?: "light" | "dark" }) {
                             isDark
                                 ? {
                                     fontFamily: "var(--font-heading), serif",
-                                    color: "#F0EEE6",
+                                    color: "#262624",
                                 }
                                 : undefined
                         }
                     >
-                        Meet the <span style={{ color: isDark ? "#D67854" : "var(--color-primary)" }}>Experts</span>
+                        Meet the <span style={{ color: isDark ? "#137EFF" : "var(--color-primary)" }}>Experts</span>
                     </h2>
                     <p
                         className={isDark ? "text-lg" : "text-muted-foreground text-lg"}
@@ -91,7 +91,7 @@ export function Bios({ theme = "light" }: { theme?: "light" | "dark" }) {
                             isDark
                                 ? {
                                     fontFamily: "var(--font-sans), sans-serif",
-                                    color: "#F0EEE6",
+                                    color: "#262624",
                                     opacity: 0.75,
                                 }
                                 : undefined
@@ -117,8 +117,8 @@ export function Bios({ theme = "light" }: { theme?: "light" | "dark" }) {
                             style={
                                 isDark
                                     ? {
-                                        backgroundColor: "#2C2C29",
-                                        borderColor: "rgba(240, 238, 230, 0.08)",
+                                        backgroundColor: "#FFFFFF",
+                                        borderColor: "rgba(38, 38, 36, 0.08)",
                                     }
                                     : undefined
                             }
@@ -129,7 +129,7 @@ export function Bios({ theme = "light" }: { theme?: "light" | "dark" }) {
                                         <div
                                             className="w-40 h-40 rounded-full overflow-hidden border-4"
                                             style={{
-                                                borderColor: isDark ? "rgba(214, 120, 84, 0.15)" : "rgba(91, 63, 255, 0.1)",
+                                                borderColor: isDark ? "rgba(19, 126, 255, 0.15)" : "rgba(91, 63, 255, 0.1)",
                                             }}
                                         >
                                             <img
@@ -146,13 +146,13 @@ export function Bios({ theme = "light" }: { theme?: "light" | "dark" }) {
                                         <div
                                             className="w-40 h-40 rounded-full border-4 flex items-center justify-center"
                                             style={{
-                                                backgroundColor: isDark ? "rgba(214, 120, 84, 0.1)" : "rgba(91, 63, 255, 0.1)",
-                                                borderColor: isDark ? "rgba(214, 120, 84, 0.2)" : "rgba(91, 63, 255, 0.2)",
+                                                backgroundColor: isDark ? "rgba(19, 126, 255, 0.1)" : "rgba(91, 63, 255, 0.1)",
+                                                borderColor: isDark ? "rgba(19, 126, 255, 0.2)" : "rgba(91, 63, 255, 0.2)",
                                             }}
                                         >
                                             <span
                                                 className="text-4xl font-heading font-bold"
-                                                style={{ color: isDark ? "#D67854" : "var(--color-primary)" }}
+                                                style={{ color: isDark ? "#137EFF" : "var(--color-primary)" }}
                                             >
                                                 {person.name.charAt(0)}
                                             </span>
@@ -171,7 +171,7 @@ export function Bios({ theme = "light" }: { theme?: "light" | "dark" }) {
                                             isDark
                                                 ? {
                                                     fontFamily: "var(--font-heading), serif",
-                                                    color: "#F0EEE6",
+                                                    color: "#262624",
                                                 }
                                                 : undefined
                                         }
@@ -188,7 +188,7 @@ export function Bios({ theme = "light" }: { theme?: "light" | "dark" }) {
                                             isDark
                                                 ? {
                                                     fontFamily: "var(--font-sans), sans-serif",
-                                                    color: "#D67854",
+                                                    color: "#137EFF",
                                                 }
                                                 : undefined
                                         }
@@ -203,7 +203,7 @@ export function Bios({ theme = "light" }: { theme?: "light" | "dark" }) {
                                                 target="_blank"
                                                 className={
                                                     isDark
-                                                        ? "p-3 rounded-full transition-colors bg-[#F0EEE6]/[0.04] text-[#F0EEE6] hover:bg-[#0A66C2]/15 hover:text-[#0A66C2]"
+                                                        ? "p-3 rounded-full transition-colors bg-[#262624]/[0.04] text-[#262624] hover:bg-[#0A66C2]/15 hover:text-[#0A66C2]"
                                                         : "p-3 bg-muted hover:bg-primary/20 rounded-full transition-colors text-muted-foreground hover:text-primary"
                                                 }
                                             >
@@ -216,7 +216,7 @@ export function Bios({ theme = "light" }: { theme?: "light" | "dark" }) {
                                                 target="_blank"
                                                 className={
                                                     isDark
-                                                        ? "p-3 rounded-full transition-colors bg-[#F0EEE6]/[0.04] text-[#F0EEE6] hover:bg-[#FF0000]/15 hover:text-[#FF0000]"
+                                                        ? "p-3 rounded-full transition-colors bg-[#262624]/[0.04] text-[#262624] hover:bg-[#FF0000]/15 hover:text-[#FF0000]"
                                                         : "p-3 bg-muted hover:bg-red-500/20 rounded-full transition-colors text-muted-foreground hover:text-red-500"
                                                 }
                                             >
@@ -238,7 +238,7 @@ export function Bios({ theme = "light" }: { theme?: "light" | "dark" }) {
                                         isDark
                                             ? {
                                                 fontFamily: "var(--font-sans), sans-serif",
-                                                color: "#F0EEE6",
+                                                color: "#262624",
                                                 opacity: 0.75,
                                             }
                                             : undefined

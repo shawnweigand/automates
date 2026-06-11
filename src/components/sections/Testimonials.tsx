@@ -70,8 +70,8 @@ export function Testimonials({ theme = "light" }: { theme?: "light" | "dark" }) 
             style={
                 isDark
                     ? {
-                        backgroundColor: "#262624",
-                        borderTop: "1px solid rgba(240, 238, 230, 0.08)",
+                        backgroundColor: "#FAF9F5",
+                        borderTop: "1px solid rgba(38, 38, 36, 0.08)",
                     }
                     : undefined
             }
@@ -88,7 +88,7 @@ export function Testimonials({ theme = "light" }: { theme?: "light" | "dark" }) 
                             isDark
                                 ? {
                                     fontFamily: "var(--font-heading), serif",
-                                    color: "#F0EEE6",
+                                    color: "#262624",
                                 }
                                 : undefined
                         }
@@ -101,7 +101,7 @@ export function Testimonials({ theme = "light" }: { theme?: "light" | "dark" }) 
                             isDark
                                 ? {
                                     fontFamily: "var(--font-sans), sans-serif",
-                                    color: "#F0EEE6",
+                                    color: "#262624",
                                     opacity: 0.75,
                                 }
                                 : undefined
@@ -122,7 +122,7 @@ export function Testimonials({ theme = "light" }: { theme?: "light" | "dark" }) 
                     className="absolute left-0 top-0 bottom-0 w-24 md:w-48 z-20 pointer-events-none"
                     style={{
                         background: isDark
-                            ? "linear-gradient(to right, #262624, transparent)"
+                            ? "linear-gradient(to right, #FAF9F5, transparent)"
                             : "linear-gradient(to right, #f8fafc, transparent)",
                     }}
                 />
@@ -130,7 +130,7 @@ export function Testimonials({ theme = "light" }: { theme?: "light" | "dark" }) 
                     className="absolute right-0 top-0 bottom-0 w-24 md:w-48 z-20 pointer-events-none"
                     style={{
                         background: isDark
-                            ? "linear-gradient(to left, #262624, transparent)"
+                            ? "linear-gradient(to left, #FAF9F5, transparent)"
                             : "linear-gradient(to left, #f8fafc, transparent)",
                     }}
                 />
@@ -154,8 +154,8 @@ export function Testimonials({ theme = "light" }: { theme?: "light" | "dark" }) 
                                     style={
                                         isDark
                                             ? {
-                                                backgroundColor: "#2C2C29",
-                                                borderColor: "rgba(240, 238, 230, 0.08)",
+                                                backgroundColor: "#FFFFFF",
+                                                borderColor: "rgba(38, 38, 36, 0.08)",
                                             }
                                             : undefined
                                     }
@@ -163,7 +163,7 @@ export function Testimonials({ theme = "light" }: { theme?: "light" | "dark" }) 
                                     <Quote
                                         className="h-8 w-8 mb-6"
                                         style={{
-                                            color: isDark ? "rgba(214, 120, 84, 0.2)" : "rgba(91, 63, 255, 0.2)",
+                                            color: isDark ? "rgba(19, 126, 255, 0.2)" : "rgba(91, 63, 255, 0.2)",
                                         }}
                                     />
                                     <p
@@ -176,7 +176,7 @@ export function Testimonials({ theme = "light" }: { theme?: "light" | "dark" }) 
                                             isDark
                                                 ? {
                                                     fontFamily: "var(--font-sans), sans-serif",
-                                                    color: "#F0EEE6",
+                                                    color: "#262624",
                                                     opacity: 0.85,
                                                 }
                                                 : undefined
@@ -194,7 +194,7 @@ export function Testimonials({ theme = "light" }: { theme?: "light" | "dark" }) 
                                                 style={
                                                     isDark
                                                         ? {
-                                                            borderColor: "rgba(240, 238, 230, 0.08)",
+                                                            borderColor: "rgba(38, 38, 36, 0.08)",
                                                         }
                                                         : {
                                                             borderColor: "var(--border)",
@@ -211,9 +211,9 @@ export function Testimonials({ theme = "light" }: { theme?: "light" | "dark" }) 
                                                 style={
                                                     isDark
                                                         ? {
-                                                            backgroundColor: "rgba(214, 120, 84, 0.1)",
-                                                            borderColor: "rgba(214, 120, 84, 0.2)",
-                                                            color: "#D67854",
+                                                            backgroundColor: "rgba(19, 126, 255, 0.1)",
+                                                            borderColor: "rgba(19, 126, 255, 0.2)",
+                                                            color: "#137EFF",
                                                         }
                                                         : undefined
                                                 }
@@ -228,7 +228,7 @@ export function Testimonials({ theme = "light" }: { theme?: "light" | "dark" }) 
                                                     isDark
                                                         ? {
                                                             fontFamily: "var(--font-sans), sans-serif",
-                                                            color: "#F0EEE6",
+                                                            color: "#262624",
                                                         }
                                                         : undefined
                                                 }
@@ -241,7 +241,7 @@ export function Testimonials({ theme = "light" }: { theme?: "light" | "dark" }) 
                                                     isDark
                                                         ? {
                                                             fontFamily: "var(--font-sans), sans-serif",
-                                                            color: "#F0EEE6",
+                                                            color: "#262624",
                                                             opacity: 0.5,
                                                         }
                                                         : undefined
